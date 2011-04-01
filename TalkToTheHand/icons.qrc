@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/app_window&amp;32.png</file>
+        <file>images/attention_icon&amp;32.png</file>
+        <file>images/clipboard_copy_icon&amp;32.png</file>
+        <file>images/cog_icon&amp;32.png</file>
+        <file>images/cursor_drag_arrow_2_icon&amp;32.png</file>
+        <file>images/db_icon&amp;32.png</file>
+        <file>images/delete_icon&amp;32.png</file>
+        <file>images/eye_icon&amp;32.png</file>
+        <file>images/eye_inv_icon&amp;32.png</file>
+        <file>images/folder_icon&amp;32.png</file>
+        <file>images/folder_open_icon&amp;32.png</file>
+        <file>images/hand_1_icon&amp;32.png</file>
+        <file>images/hand_contra_icon&amp;32.png</file>
+        <file>images/hand_pro_icon&amp;32.png</file>
+        <file>images/info_icon&amp;32.png</file>
+        <file>images/on-off_icon&amp;32.png</file>
+        <file>images/photo_icon&amp;32.png</file>
+        <file>images/playback_play_icon&amp;32.png</file>
+        <file>images/playback_rec_icon&amp;32.png</file>
+        <file>images/playback_stop_icon&amp;32.png</file>
+        <file>images/round_checkmark_icon&amp;32.png</file>
+        <file>images/round_minus_icon&amp;32.png</file>
+        <file>images/save_icon&amp;32.png</file>
+        <file>images/sound_high_icon&amp;32.png</file>
+        <file>images/sound_mute_icon&amp;32.png</file>
+        <file>images/ASL.jpg</file>
+        <file>images/helping-hand.jpg</file>
+        <file>images/logo.jpg</file>
+        <file>images/SplashScreen.jpg</file>
+    </qresource>
+</RCC>
