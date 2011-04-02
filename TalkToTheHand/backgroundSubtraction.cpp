@@ -82,7 +82,7 @@ void BackgroundSubtraction::getSubtractedBackground(IplImage *rawImage)
         ++nframes;
 
     if( singlestep )
-        pause = true;
+        pause1 = true;
 
     /** For first iteration **/
     if( nframes == 1 )
