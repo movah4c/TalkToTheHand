@@ -31,7 +31,7 @@ private:
     int n;
     int nframes;
     int nframesToLearnBG;
-    bool pause;
+    bool pause1;
     bool singlestep;
 
 
