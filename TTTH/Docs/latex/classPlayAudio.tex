@@ -1,0 +1,170 @@
+\hypertarget{classPlayAudio}{
+\section{PlayAudio Class Reference}
+\label{classPlayAudio}\index{PlayAudio@{PlayAudio}}
+}
+
+
+{\ttfamily \#include $<$audio.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlayAudio_a24ee7646e4daf07c48f6ae0a6c614d99}{PlayAudio} (QWidget $\ast$parent)
+\item 
+\hyperlink{classPlayAudio_a6579ebf541610694149cb1bfa5b49fba}{$\sim$PlayAudio} ()
+\item 
+void \hyperlink{classPlayAudio_a7fe323da18d53e4f7a7999b59714e278}{addToPlayList} (QString filename)
+\item 
+void \hyperlink{classPlayAudio_a223c9b8cc910ee1fd96e73936f82e2b2}{changeVolume} (int volume)
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPlayAudio_ab4b1de1ed5ae1f78771b32348a0b2286}{tick} (qint64 time)
+\item 
+void \hyperlink{classPlayAudio_a01311f0e2678f67b2b192e9f9c0fa477}{aboutToFinish} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Phonon::SeekSlider $\ast$ \hyperlink{classPlayAudio_ae1feb0a9b9fcf14d2aedf599dbbe9335}{seekSlider}
+\item 
+Phonon::MediaObject $\ast$ \hyperlink{classPlayAudio_a58c02857fd039d8015c0fae749682e91}{mediaObject}
+\item 
+Phonon::AudioOutput $\ast$ \hyperlink{classPlayAudio_a91e318098e325117af6e94c9aaf826ef}{audioOutput}
+\item 
+Phonon::VolumeSlider $\ast$ \hyperlink{classPlayAudio_a27e1f47c759326c30eca15178a3392e7}{volumeSlider}
+\item 
+QVector$<$ Phonon::MediaSource $>$ \hyperlink{classPlayAudio_aa80d497cf68f1acd768f5abdb564a60a}{sources}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Play Audio class. This class is the one which connects the hardware audio device to the application and helps the user to control the audio volume and the application to send the audio stream to the audio device. This class is inherited publicly from the QObject so that it can be easily connected to the other Qt Widgets with the use of signals and slots. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlayAudio_a24ee7646e4daf07c48f6ae0a6c614d99}{
+\index{PlayAudio@{PlayAudio}!PlayAudio@{PlayAudio}}
+\index{PlayAudio@{PlayAudio}!PlayAudio@{PlayAudio}}
+\subsubsection[{PlayAudio}]{\setlength{\rightskip}{0pt plus 5cm}PlayAudio::PlayAudio (
+\begin{DoxyParamCaption}
+\item[{QWidget $\ast$}]{ parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classPlayAudio_a24ee7646e4daf07c48f6ae0a6c614d99}
+Constructor of Play Audio class. This constructor initializes the media objects from the phonon package to interact with the audio device. It also sets the tick interval for the audio device. Then it connects different signals and slots so that it can interact effectively with the main window. 
+\begin{DoxyParams}{Parameters}
+\item[{\em parent}]a pointer to QWidget class which acts as parent to this widget.\end{DoxyParams}
+Constructor 
+
+Connecting media object to different slots
+
+Connecting media object and audioOutput 
+
+\hypertarget{classPlayAudio_a6579ebf541610694149cb1bfa5b49fba}{
+\index{PlayAudio@{PlayAudio}!$\sim$PlayAudio@{$\sim$PlayAudio}}
+\index{$\sim$PlayAudio@{$\sim$PlayAudio}!PlayAudio@{PlayAudio}}
+\subsubsection[{$\sim$PlayAudio}]{\setlength{\rightskip}{0pt plus 5cm}PlayAudio::$\sim$PlayAudio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classPlayAudio_a6579ebf541610694149cb1bfa5b49fba}
+Destructor of the Play Audio class. Deletes all the pointers which were initialized in the constructors.
+
+Destructor 
+
+deleting all pointers allocated in this class 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPlayAudio_a01311f0e2678f67b2b192e9f9c0fa477}{
+\index{PlayAudio@{PlayAudio}!aboutToFinish@{aboutToFinish}}
+\index{aboutToFinish@{aboutToFinish}!PlayAudio@{PlayAudio}}
+\subsubsection[{aboutToFinish}]{\setlength{\rightskip}{0pt plus 5cm}void PlayAudio::aboutToFinish (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classPlayAudio_a01311f0e2678f67b2b192e9f9c0fa477}
+A private slot. This slot is called when the member being played now is about to be completed and a shuffle has to be made in the playlist queue.
+
+Things to be done when audio is about to finish \hypertarget{classPlayAudio_a7fe323da18d53e4f7a7999b59714e278}{
+\index{PlayAudio@{PlayAudio}!addToPlayList@{addToPlayList}}
+\index{addToPlayList@{addToPlayList}!PlayAudio@{PlayAudio}}
+\subsubsection[{addToPlayList}]{\setlength{\rightskip}{0pt plus 5cm}void PlayAudio::addToPlayList (
+\begin{DoxyParamCaption}
+\item[{QString}]{ filename}
+\end{DoxyParamCaption}
+)}}
+\label{classPlayAudio_a7fe323da18d53e4f7a7999b59714e278}
+A public function taking QString as argument. This function is called from the main window and the audio file which is to be played or spoken is passed to this filename. The internal play list acts as a queue and adds all these requests to be played. 
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]an object to QString which stores file name to be played.\end{DoxyParams}
+Add media to the play list 
+
+Checking for empty conditions 
+
+\hypertarget{classPlayAudio_a223c9b8cc910ee1fd96e73936f82e2b2}{
+\index{PlayAudio@{PlayAudio}!changeVolume@{changeVolume}}
+\index{changeVolume@{changeVolume}!PlayAudio@{PlayAudio}}
+\subsubsection[{changeVolume}]{\setlength{\rightskip}{0pt plus 5cm}void PlayAudio::changeVolume (
+\begin{DoxyParamCaption}
+\item[{int}]{ volume}
+\end{DoxyParamCaption}
+)}}
+\label{classPlayAudio_a223c9b8cc910ee1fd96e73936f82e2b2}
+A public function. This is a public function which is called when the volume has to be changed. 
+\begin{DoxyParams}{Parameters}
+\item[{\em volume}]an integer type denoting the present volume.\end{DoxyParams}
+Change output volume \hypertarget{classPlayAudio_ab4b1de1ed5ae1f78771b32348a0b2286}{
+\index{PlayAudio@{PlayAudio}!tick@{tick}}
+\index{tick@{tick}!PlayAudio@{PlayAudio}}
+\subsubsection[{tick}]{\setlength{\rightskip}{0pt plus 5cm}void PlayAudio::tick (
+\begin{DoxyParamCaption}
+\item[{qint64}]{ time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classPlayAudio_ab4b1de1ed5ae1f78771b32348a0b2286}
+A private slot. This private slot is connected to the tick time so that it checks or updates every second for the audio list being played and other tasks such as audio is going to end or not. 
+\begin{DoxyParams}{Parameters}
+\item[{\em time}]a qint64 type variable denoting update time. \end{DoxyParams}
+
+
+This portion is executed every second when the audio is being played 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPlayAudio_a91e318098e325117af6e94c9aaf826ef}{
+\index{PlayAudio@{PlayAudio}!audioOutput@{audioOutput}}
+\index{audioOutput@{audioOutput}!PlayAudio@{PlayAudio}}
+\subsubsection[{audioOutput}]{\setlength{\rightskip}{0pt plus 5cm}Phonon::AudioOutput$\ast$ {\bf PlayAudio::audioOutput}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classPlayAudio_a91e318098e325117af6e94c9aaf826ef}
+A private pointer to Phonon::AudioOutput. This is the pointer to the class which manages all the audio ouput modes, volumes, etc. \hypertarget{classPlayAudio_a58c02857fd039d8015c0fae749682e91}{
+\index{PlayAudio@{PlayAudio}!mediaObject@{mediaObject}}
+\index{mediaObject@{mediaObject}!PlayAudio@{PlayAudio}}
+\subsubsection[{mediaObject}]{\setlength{\rightskip}{0pt plus 5cm}Phonon::MediaObject$\ast$ {\bf PlayAudio::mediaObject}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classPlayAudio_a58c02857fd039d8015c0fae749682e91}
+A private pointer to Phonon::MediaObject. This phonon media object contains all the play list and audio which is being played or is about to be played. \hypertarget{classPlayAudio_ae1feb0a9b9fcf14d2aedf599dbbe9335}{
+\index{PlayAudio@{PlayAudio}!seekSlider@{seekSlider}}
+\index{seekSlider@{seekSlider}!PlayAudio@{PlayAudio}}
+\subsubsection[{seekSlider}]{\setlength{\rightskip}{0pt plus 5cm}Phonon::SeekSlider$\ast$ {\bf PlayAudio::seekSlider}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classPlayAudio_ae1feb0a9b9fcf14d2aedf599dbbe9335}
+A private pointer to Phonon::SeekSlider. Phonon seek slider is used to get a slider for updating volume information internally as changed by the user. \hypertarget{classPlayAudio_aa80d497cf68f1acd768f5abdb564a60a}{
+\index{PlayAudio@{PlayAudio}!sources@{sources}}
+\index{sources@{sources}!PlayAudio@{PlayAudio}}
+\subsubsection[{sources}]{\setlength{\rightskip}{0pt plus 5cm}QVector$<$Phonon::MediaSource$>$ {\bf PlayAudio::sources}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classPlayAudio_aa80d497cf68f1acd768f5abdb564a60a}
+A private vector of Phonon::MediaSources. This vector act as a queue for the media objects being played and which are going to be played. If any audio is still being played and other comes in, it is kept in this queue. \hypertarget{classPlayAudio_a27e1f47c759326c30eca15178a3392e7}{
+\index{PlayAudio@{PlayAudio}!volumeSlider@{volumeSlider}}
+\index{volumeSlider@{volumeSlider}!PlayAudio@{PlayAudio}}
+\subsubsection[{volumeSlider}]{\setlength{\rightskip}{0pt plus 5cm}Phonon::VolumeSlider$\ast$ {\bf PlayAudio::volumeSlider}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classPlayAudio_a27e1f47c759326c30eca15178a3392e7}
+A private pointer to Phonon::VolumeSlider. This is the pointer to the Volume Slider which actually takes input from the user and gives it to the inner modules. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{audio_8h}{audio.h}\item 
+\hyperlink{audio_8cpp}{audio.cpp}\end{DoxyCompactItemize}

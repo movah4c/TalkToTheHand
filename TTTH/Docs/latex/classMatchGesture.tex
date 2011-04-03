@@ -1,0 +1,204 @@
+\hypertarget{classMatchGesture}{
+\section{MatchGesture Class Reference}
+\label{classMatchGesture}\index{MatchGesture@{MatchGesture}}
+}
+
+
+{\ttfamily \#include $<$matching.h$>$}
+
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMatchGesture_acfe500262c9eeb39a197a1794c43bf03}{sendForDisplay} (char c)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMatchGesture_ab6f8541a52fdd6035e454eafe201412e}{MatchGesture} (QWidget $\ast$parent=0)
+\item 
+\hyperlink{classMatchGesture_a9285a6c18009ba55d57de792ab7db7bc}{$\sim$MatchGesture} ()
+\item 
+IplImage $\ast$ \hyperlink{classMatchGesture_a5a0a9cf82d44dfc2ed7281aa97901cfb}{getMatch} (IplImage $\ast$iplImage)
+\item 
+void \hyperlink{classMatchGesture_a4284d57d6fdb097ff0b45f49f1542fe6}{getProbableCharacter} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMatchGesture_a9ee3f2771495fb72f7d558c27fe45423}{detectAndDraw} (Mat \&img, CascadeClassifier \&\hyperlink{classMatchGesture_a5f32a9342107ec1144c73c617c4d8e34}{cascade}, CascadeClassifier \&\hyperlink{classMatchGesture_aa938a749d3ef32508803cfd4fbf30c0a}{nestedCascade}, double \hyperlink{classMatchGesture_af3bb3af0d54664793eeaa80cf6249750}{scale})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \hyperlink{classMatchGesture_a663e371a4051129393890b53e8d9f298}{allCascadeNames}
+\item 
+int \hyperlink{classMatchGesture_a57ceb174132391f082f42e58eac1866c}{charactersOccurences} \mbox{[}NO\_\-OF\_\-GESTURES\mbox{]}
+\item 
+int \hyperlink{classMatchGesture_a16665c0e1aa834c04a404141faf0a35b}{maxTillNow}
+\item 
+int \hyperlink{classMatchGesture_aefd5499b36ad81c08912b6566c5b42a0}{maxIndexTillNow}
+\item 
+char \hyperlink{classMatchGesture_a32a7db9f36bf5d23d764ef57bc467528}{matchedCharacter}
+\item 
+string \hyperlink{classMatchGesture_a6524899aea49fa93f259cb78ca0e0f3c}{cascadeName}
+\item 
+string \hyperlink{classMatchGesture_aacb8c478358eee5b075988893f267737}{nestedCascadeName}
+\item 
+Mat \hyperlink{classMatchGesture_acefa626782bb878de7a7394ff7dc80f6}{frame}
+\item 
+Mat \hyperlink{classMatchGesture_a8e1b515de34fb0746223b42d5497c817}{frameCopy}
+\item 
+Mat \hyperlink{classMatchGesture_abc309df906bffe0bc4050aefbf965d69}{image}
+\item 
+CascadeClassifier \hyperlink{classMatchGesture_a5f32a9342107ec1144c73c617c4d8e34}{cascade}
+\item 
+CascadeClassifier \hyperlink{classMatchGesture_aa938a749d3ef32508803cfd4fbf30c0a}{nestedCascade}
+\item 
+double \hyperlink{classMatchGesture_af3bb3af0d54664793eeaa80cf6249750}{scale}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classMatchGesture}{MatchGesture} Class. This class receives current frames and uses the HAAR cascade trained xmls to match gesture. The matched gesture is converted to a character and then sent to the main window module for speaking and display. It is inherited publicly from QWidget so that it can be linked with other Qt modules using Signals and Slots. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMatchGesture_ab6f8541a52fdd6035e454eafe201412e}{
+\index{MatchGesture@{MatchGesture}!MatchGesture@{MatchGesture}}
+\index{MatchGesture@{MatchGesture}!MatchGesture@{MatchGesture}}
+\subsubsection[{MatchGesture}]{\setlength{\rightskip}{0pt plus 5cm}MatchGesture::MatchGesture (
+\begin{DoxyParamCaption}
+\item[{QWidget $\ast$}]{ parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classMatchGesture_ab6f8541a52fdd6035e454eafe201412e}
+A constructor. This Matching constructor takes the argument as parent window of type QWidget and generates. It initializes the cascade classifiers. \hypertarget{classMatchGesture_a9285a6c18009ba55d57de792ab7db7bc}{
+\index{MatchGesture@{MatchGesture}!$\sim$MatchGesture@{$\sim$MatchGesture}}
+\index{$\sim$MatchGesture@{$\sim$MatchGesture}!MatchGesture@{MatchGesture}}
+\subsubsection[{$\sim$MatchGesture}]{\setlength{\rightskip}{0pt plus 5cm}MatchGesture::$\sim$MatchGesture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classMatchGesture_a9285a6c18009ba55d57de792ab7db7bc}
+A Destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classMatchGesture_a9ee3f2771495fb72f7d558c27fe45423}{
+\index{MatchGesture@{MatchGesture}!detectAndDraw@{detectAndDraw}}
+\index{detectAndDraw@{detectAndDraw}!MatchGesture@{MatchGesture}}
+\subsubsection[{detectAndDraw}]{\setlength{\rightskip}{0pt plus 5cm}void MatchGesture::detectAndDraw (
+\begin{DoxyParamCaption}
+\item[{Mat \&}]{ img, }
+\item[{CascadeClassifier \&}]{ cascade, }
+\item[{CascadeClassifier \&}]{ nestedCascade, }
+\item[{double}]{ scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_a9ee3f2771495fb72f7d558c27fe45423}
+A private function. This function takes the image matrix as input and tries to match the gesture. If it gets the recognized gesture, it draws a circle around it. 
+\begin{DoxyParams}{Parameters}
+\item[{\em img}]a Mat reference to the image to take current input frame. \item[{\em cascade}]a CascadeClassifier reference which uses the Haar to match gesture. \item[{\em nestedCascade}]a CascadeClassifier reference which used to match sub category. \item[{\em scale}]a double type which specifies the matching radius. \end{DoxyParams}
+\hypertarget{classMatchGesture_a5a0a9cf82d44dfc2ed7281aa97901cfb}{
+\index{MatchGesture@{MatchGesture}!getMatch@{getMatch}}
+\index{getMatch@{getMatch}!MatchGesture@{MatchGesture}}
+\subsubsection[{getMatch}]{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ MatchGesture::getMatch (
+\begin{DoxyParamCaption}
+\item[{IplImage $\ast$}]{ iplImage}
+\end{DoxyParamCaption}
+)}}
+\label{classMatchGesture_a5a0a9cf82d44dfc2ed7281aa97901cfb}
+A public function. This function is called from the other module when a matching has to be done. 
+\begin{DoxyParams}{Parameters}
+\item[{\em iplImage}]an IplImage type to recieve the image to match. \end{DoxyParams}
+\hypertarget{classMatchGesture_a4284d57d6fdb097ff0b45f49f1542fe6}{
+\index{MatchGesture@{MatchGesture}!getProbableCharacter@{getProbableCharacter}}
+\index{getProbableCharacter@{getProbableCharacter}!MatchGesture@{MatchGesture}}
+\subsubsection[{getProbableCharacter}]{\setlength{\rightskip}{0pt plus 5cm}void MatchGesture::getProbableCharacter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classMatchGesture_a4284d57d6fdb097ff0b45f49f1542fe6}
+A public function. This function is called when a probable matched character is required from this module in a particular time interval. \hypertarget{classMatchGesture_acfe500262c9eeb39a197a1794c43bf03}{
+\index{MatchGesture@{MatchGesture}!sendForDisplay@{sendForDisplay}}
+\index{sendForDisplay@{sendForDisplay}!MatchGesture@{MatchGesture}}
+\subsubsection[{sendForDisplay}]{\setlength{\rightskip}{0pt plus 5cm}void MatchGesture::sendForDisplay (
+\begin{DoxyParamCaption}
+\item[{char}]{ c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{classMatchGesture_acfe500262c9eeb39a197a1794c43bf03}
+A Qt Signal. This signal is emitted whenever a character is matched. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classMatchGesture_a663e371a4051129393890b53e8d9f298}{
+\index{MatchGesture@{MatchGesture}!allCascadeNames@{allCascadeNames}}
+\index{allCascadeNames@{allCascadeNames}!MatchGesture@{MatchGesture}}
+\subsubsection[{allCascadeNames}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ {\bf MatchGesture::allCascadeNames}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_a663e371a4051129393890b53e8d9f298}
+A private vector of strings. Stores filenames of trained Haar Cascade XML files for all gestures. \hypertarget{classMatchGesture_a5f32a9342107ec1144c73c617c4d8e34}{
+\index{MatchGesture@{MatchGesture}!cascade@{cascade}}
+\index{cascade@{cascade}!MatchGesture@{MatchGesture}}
+\subsubsection[{cascade}]{\setlength{\rightskip}{0pt plus 5cm}CascadeClassifier {\bf MatchGesture::cascade}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_a5f32a9342107ec1144c73c617c4d8e34}
+A private CascadeClassifier variable. This cascade classifier stores the HAAR settings for matching. \hypertarget{classMatchGesture_a6524899aea49fa93f259cb78ca0e0f3c}{
+\index{MatchGesture@{MatchGesture}!cascadeName@{cascadeName}}
+\index{cascadeName@{cascadeName}!MatchGesture@{MatchGesture}}
+\subsubsection[{cascadeName}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf MatchGesture::cascadeName}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_a6524899aea49fa93f259cb78ca0e0f3c}
+A private string variable. This variable stores the current cascade filename. \hypertarget{classMatchGesture_a57ceb174132391f082f42e58eac1866c}{
+\index{MatchGesture@{MatchGesture}!charactersOccurences@{charactersOccurences}}
+\index{charactersOccurences@{charactersOccurences}!MatchGesture@{MatchGesture}}
+\subsubsection[{charactersOccurences}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf MatchGesture::charactersOccurences}\mbox{[}NO\_\-OF\_\-GESTURES\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_a57ceb174132391f082f42e58eac1866c}
+A private integer type array. This array contains the number of occurences of the matched characters per session. \hypertarget{classMatchGesture_acefa626782bb878de7a7394ff7dc80f6}{
+\index{MatchGesture@{MatchGesture}!frame@{frame}}
+\index{frame@{frame}!MatchGesture@{MatchGesture}}
+\subsubsection[{frame}]{\setlength{\rightskip}{0pt plus 5cm}Mat {\bf MatchGesture::frame}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_acefa626782bb878de7a7394ff7dc80f6}
+A private Mat variable. This variable stores the current frame to match. \hypertarget{classMatchGesture_a8e1b515de34fb0746223b42d5497c817}{
+\index{MatchGesture@{MatchGesture}!frameCopy@{frameCopy}}
+\index{frameCopy@{frameCopy}!MatchGesture@{MatchGesture}}
+\subsubsection[{frameCopy}]{\setlength{\rightskip}{0pt plus 5cm}Mat {\bf MatchGesture::frameCopy}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_a8e1b515de34fb0746223b42d5497c817}
+A private Mat variable. This variable stores the copy of current frame to match. \hypertarget{classMatchGesture_abc309df906bffe0bc4050aefbf965d69}{
+\index{MatchGesture@{MatchGesture}!image@{image}}
+\index{image@{image}!MatchGesture@{MatchGesture}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Mat {\bf MatchGesture::image}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_abc309df906bffe0bc4050aefbf965d69}
+A private Mat variable. This variable stores the matched image. \hypertarget{classMatchGesture_a32a7db9f36bf5d23d764ef57bc467528}{
+\index{MatchGesture@{MatchGesture}!matchedCharacter@{matchedCharacter}}
+\index{matchedCharacter@{matchedCharacter}!MatchGesture@{MatchGesture}}
+\subsubsection[{matchedCharacter}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf MatchGesture::matchedCharacter}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_a32a7db9f36bf5d23d764ef57bc467528}
+A private character type variable. This character stores the maximum occurred character in particular interval. \hypertarget{classMatchGesture_aefd5499b36ad81c08912b6566c5b42a0}{
+\index{MatchGesture@{MatchGesture}!maxIndexTillNow@{maxIndexTillNow}}
+\index{maxIndexTillNow@{maxIndexTillNow}!MatchGesture@{MatchGesture}}
+\subsubsection[{maxIndexTillNow}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf MatchGesture::maxIndexTillNow}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_aefd5499b36ad81c08912b6566c5b42a0}
+A private integer type variable. This intger denotes the index of the maximum occurred character. \hypertarget{classMatchGesture_a16665c0e1aa834c04a404141faf0a35b}{
+\index{MatchGesture@{MatchGesture}!maxTillNow@{maxTillNow}}
+\index{maxTillNow@{maxTillNow}!MatchGesture@{MatchGesture}}
+\subsubsection[{maxTillNow}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf MatchGesture::maxTillNow}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_a16665c0e1aa834c04a404141faf0a35b}
+A private integer type variable. This integer denotes the maximum occurences of a character. \hypertarget{classMatchGesture_aa938a749d3ef32508803cfd4fbf30c0a}{
+\index{MatchGesture@{MatchGesture}!nestedCascade@{nestedCascade}}
+\index{nestedCascade@{nestedCascade}!MatchGesture@{MatchGesture}}
+\subsubsection[{nestedCascade}]{\setlength{\rightskip}{0pt plus 5cm}CascadeClassifier {\bf MatchGesture::nestedCascade}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_aa938a749d3ef32508803cfd4fbf30c0a}
+A private CascadeClassifier variable. This cascade classifier stores the nested HAAR settings for matching. \hypertarget{classMatchGesture_aacb8c478358eee5b075988893f267737}{
+\index{MatchGesture@{MatchGesture}!nestedCascadeName@{nestedCascadeName}}
+\index{nestedCascadeName@{nestedCascadeName}!MatchGesture@{MatchGesture}}
+\subsubsection[{nestedCascadeName}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf MatchGesture::nestedCascadeName}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_aacb8c478358eee5b075988893f267737}
+A private string variable. This variable stores the current nested cascade filename. \hypertarget{classMatchGesture_af3bb3af0d54664793eeaa80cf6249750}{
+\index{MatchGesture@{MatchGesture}!scale@{scale}}
+\index{scale@{scale}!MatchGesture@{MatchGesture}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf MatchGesture::scale}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMatchGesture_af3bb3af0d54664793eeaa80cf6249750}
+A private double variable. This double variable stores the scale radius for matching. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{matching_8h}{matching.h}\item 
+\hyperlink{matching_8cpp}{matching.cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,182 @@
+\hypertarget{classBackgroundSubtraction}{
+\section{BackgroundSubtraction Class Reference}
+\label{classBackgroundSubtraction}\index{BackgroundSubtraction@{BackgroundSubtraction}}
+}
+
+
+{\ttfamily \#include $<$backgroundSubtraction.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBackgroundSubtraction_ade7209bf0172def580503067920b50a8}{BackgroundSubtraction} ()
+\item 
+\hyperlink{classBackgroundSubtraction_acd4273d5bf204d5cc4bece4082478a68}{$\sim$BackgroundSubtraction} ()
+\item 
+void \hyperlink{classBackgroundSubtraction_a80b51bfd616204f7a47015913c550dac}{getSubtractedBackground} (IplImage $\ast$rawData)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classBackgroundSubtraction_a81c9be9b26ae88ec2458d6980cb755e7}{help} (void)
+\item 
+void \hyperlink{classBackgroundSubtraction_a0eaa0727297fbca2ae688ea1fe6077e0}{diff\_\-pix} (IplImage $\ast$image, IplImage $\ast$image2)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CvBGCodeBookModel $\ast$ \hyperlink{classBackgroundSubtraction_a419efe20d02599addfa8ca980bf4a9c7}{model}
+\item 
+IplImage $\ast$ \hyperlink{classBackgroundSubtraction_ab3aed90e7421933c6d7d394d987aba84}{rawImage}
+\item 
+IplImage $\ast$ \hyperlink{classBackgroundSubtraction_abaa21c3ad9c48c1129407626f930f810}{yuvImage}
+\item 
+IplImage $\ast$ \hyperlink{classBackgroundSubtraction_af1e341ed6cefb35db5e493918eb778b1}{ImaskCodeBook}
+\item 
+IplImage $\ast$ \hyperlink{classBackgroundSubtraction_a0337dd89bdb214d7bde2adb57c3519d0}{ImaskCodeBookCC}
+\item 
+IplImage $\ast$ \hyperlink{classBackgroundSubtraction_a7f3f8f3c19033b0450def1fac0c70c93}{ImaskCodeBook1}
+\item 
+int \hyperlink{classBackgroundSubtraction_a3a6df6ed6dfe3c6fca3a7a792437dd4e}{c}
+\item 
+int \hyperlink{classBackgroundSubtraction_ae7bb2deb96506f56c11f411afa097ee0}{n}
+\item 
+int \hyperlink{classBackgroundSubtraction_a36044759437fc4f72be8e727a466a039}{nframes}
+\item 
+int \hyperlink{classBackgroundSubtraction_a8d778f23da4692bebcc2fe4012b49e04}{nframesToLearnBG}
+\item 
+bool \hyperlink{classBackgroundSubtraction_a587a1b66f073fa7165197c832ab25798}{pause}
+\item 
+bool \hyperlink{classBackgroundSubtraction_a7308617e19776a7695057e461e654448}{singlestep}
+\item 
+bool \hyperlink{classBackgroundSubtraction_ad02b87592657e60f8de9a1bc9c39e800}{ch} \mbox{[}\hyperlink{backgroundSubtraction_8h_a1e58a96c13c219f5e9ee89b743e7db0d}{NCHANNELS}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Background Subtraction Class 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBackgroundSubtraction_ade7209bf0172def580503067920b50a8}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!BackgroundSubtraction@{BackgroundSubtraction}}
+\index{BackgroundSubtraction@{BackgroundSubtraction}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{BackgroundSubtraction}]{\setlength{\rightskip}{0pt plus 5cm}BackgroundSubtraction::BackgroundSubtraction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classBackgroundSubtraction_ade7209bf0172def580503067920b50a8}
+\hypertarget{classBackgroundSubtraction_acd4273d5bf204d5cc4bece4082478a68}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!$\sim$BackgroundSubtraction@{$\sim$BackgroundSubtraction}}
+\index{$\sim$BackgroundSubtraction@{$\sim$BackgroundSubtraction}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{$\sim$BackgroundSubtraction}]{\setlength{\rightskip}{0pt plus 5cm}BackgroundSubtraction::$\sim$BackgroundSubtraction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classBackgroundSubtraction_acd4273d5bf204d5cc4bece4082478a68}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBackgroundSubtraction_a0eaa0727297fbca2ae688ea1fe6077e0}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!diff\_\-pix@{diff\_\-pix}}
+\index{diff\_\-pix@{diff\_\-pix}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{diff\_\-pix}]{\setlength{\rightskip}{0pt plus 5cm}void BackgroundSubtraction::diff\_\-pix (
+\begin{DoxyParamCaption}
+\item[{IplImage $\ast$}]{ image, }
+\item[{IplImage $\ast$}]{ image2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_a0eaa0727297fbca2ae688ea1fe6077e0}
+\hypertarget{classBackgroundSubtraction_a80b51bfd616204f7a47015913c550dac}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!getSubtractedBackground@{getSubtractedBackground}}
+\index{getSubtractedBackground@{getSubtractedBackground}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{getSubtractedBackground}]{\setlength{\rightskip}{0pt plus 5cm}void BackgroundSubtraction::getSubtractedBackground (
+\begin{DoxyParamCaption}
+\item[{IplImage $\ast$}]{ rawData}
+\end{DoxyParamCaption}
+)}}
+\label{classBackgroundSubtraction_a80b51bfd616204f7a47015913c550dac}
+\hypertarget{classBackgroundSubtraction_a81c9be9b26ae88ec2458d6980cb755e7}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!help@{help}}
+\index{help@{help}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{help}]{\setlength{\rightskip}{0pt plus 5cm}void BackgroundSubtraction::help (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_a81c9be9b26ae88ec2458d6980cb755e7}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBackgroundSubtraction_a3a6df6ed6dfe3c6fca3a7a792437dd4e}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!c@{c}}
+\index{c@{c}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{c}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf BackgroundSubtraction::c}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_a3a6df6ed6dfe3c6fca3a7a792437dd4e}
+\hypertarget{classBackgroundSubtraction_ad02b87592657e60f8de9a1bc9c39e800}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!ch@{ch}}
+\index{ch@{ch}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{ch}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf BackgroundSubtraction::ch}\mbox{[}{\bf NCHANNELS}\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_ad02b87592657e60f8de9a1bc9c39e800}
+\hypertarget{classBackgroundSubtraction_af1e341ed6cefb35db5e493918eb778b1}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!ImaskCodeBook@{ImaskCodeBook}}
+\index{ImaskCodeBook@{ImaskCodeBook}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{ImaskCodeBook}]{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf BackgroundSubtraction::ImaskCodeBook}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_af1e341ed6cefb35db5e493918eb778b1}
+\hypertarget{classBackgroundSubtraction_a7f3f8f3c19033b0450def1fac0c70c93}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!ImaskCodeBook1@{ImaskCodeBook1}}
+\index{ImaskCodeBook1@{ImaskCodeBook1}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{ImaskCodeBook1}]{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf BackgroundSubtraction::ImaskCodeBook1}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_a7f3f8f3c19033b0450def1fac0c70c93}
+\hypertarget{classBackgroundSubtraction_a0337dd89bdb214d7bde2adb57c3519d0}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!ImaskCodeBookCC@{ImaskCodeBookCC}}
+\index{ImaskCodeBookCC@{ImaskCodeBookCC}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{ImaskCodeBookCC}]{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf BackgroundSubtraction::ImaskCodeBookCC}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_a0337dd89bdb214d7bde2adb57c3519d0}
+\hypertarget{classBackgroundSubtraction_a419efe20d02599addfa8ca980bf4a9c7}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!model@{model}}
+\index{model@{model}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{model}]{\setlength{\rightskip}{0pt plus 5cm}CvBGCodeBookModel$\ast$ {\bf BackgroundSubtraction::model}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_a419efe20d02599addfa8ca980bf4a9c7}
+\hypertarget{classBackgroundSubtraction_ae7bb2deb96506f56c11f411afa097ee0}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!n@{n}}
+\index{n@{n}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{n}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf BackgroundSubtraction::n}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_ae7bb2deb96506f56c11f411afa097ee0}
+\hypertarget{classBackgroundSubtraction_a36044759437fc4f72be8e727a466a039}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!nframes@{nframes}}
+\index{nframes@{nframes}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{nframes}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf BackgroundSubtraction::nframes}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_a36044759437fc4f72be8e727a466a039}
+\hypertarget{classBackgroundSubtraction_a8d778f23da4692bebcc2fe4012b49e04}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!nframesToLearnBG@{nframesToLearnBG}}
+\index{nframesToLearnBG@{nframesToLearnBG}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{nframesToLearnBG}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf BackgroundSubtraction::nframesToLearnBG}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_a8d778f23da4692bebcc2fe4012b49e04}
+\hypertarget{classBackgroundSubtraction_a587a1b66f073fa7165197c832ab25798}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!pause@{pause}}
+\index{pause@{pause}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf BackgroundSubtraction::pause}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_a587a1b66f073fa7165197c832ab25798}
+\hypertarget{classBackgroundSubtraction_ab3aed90e7421933c6d7d394d987aba84}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!rawImage@{rawImage}}
+\index{rawImage@{rawImage}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{rawImage}]{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf BackgroundSubtraction::rawImage}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_ab3aed90e7421933c6d7d394d987aba84}
+\hypertarget{classBackgroundSubtraction_a7308617e19776a7695057e461e654448}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!singlestep@{singlestep}}
+\index{singlestep@{singlestep}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{singlestep}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf BackgroundSubtraction::singlestep}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_a7308617e19776a7695057e461e654448}
+\hypertarget{classBackgroundSubtraction_abaa21c3ad9c48c1129407626f930f810}{
+\index{BackgroundSubtraction@{BackgroundSubtraction}!yuvImage@{yuvImage}}
+\index{yuvImage@{yuvImage}!BackgroundSubtraction@{BackgroundSubtraction}}
+\subsubsection[{yuvImage}]{\setlength{\rightskip}{0pt plus 5cm}IplImage$\ast$ {\bf BackgroundSubtraction::yuvImage}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classBackgroundSubtraction_abaa21c3ad9c48c1129407626f930f810}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{backgroundSubtraction_8h}{backgroundSubtraction.h}\item 
+\hyperlink{backgroundSubtraction_8cpp}{backgroundSubtraction.cpp}\end{DoxyCompactItemize}

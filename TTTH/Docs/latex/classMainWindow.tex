@@ -1,0 +1,620 @@
+\hypertarget{classMainWindow}{
+\section{MainWindow Class Reference}
+\label{classMainWindow}\index{MainWindow@{MainWindow}}
+}
+
+
+{\ttfamily \#include $<$mainwindow.h$>$}
+
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_a6c232109b263942229aa84d55924f8a3}{displayRecognizedAlphabet} (char c)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_af583ca0e72c1f9583906ae3ead0555e9}{ViewTypeChange} (int type)
+\item 
+void \hyperlink{classMainWindow_aa33e1f745d6203631229f131a9a06baa}{operationalModeChange} (int type, QString filename)
+\item 
+void \hyperlink{classMainWindow_a43d9aff77dbdddacefda5c8eb43ffae2}{changeRunningState} (int state)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMainWindow_a34c4b4207b46d11a4100c9b19f0e81bb}{MainWindow} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_a4e20a4a065fbb0e4d3532a45a0a91425}{closeEvent} (QCloseEvent $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_a7be6a5d98970ac1a6296c6f9aee1e9bb}{about} ()
+\item 
+void \hyperlink{classMainWindow_ab036b89cc10ef5d41ee92df1ce243ba0}{openImage} ()
+\item 
+void \hyperlink{classMainWindow_a522431183b98bcfd052e9fc1a59d6d68}{openVideo} ()
+\item 
+void \hyperlink{classMainWindow_ac6730e1b5d17d777746e3cc8e62dff49}{startRecognition} ()
+\item 
+void \hyperlink{classMainWindow_aa47167647627b38fcac3ce61542caf68}{stopRecognition} ()
+\item 
+void \hyperlink{classMainWindow_acbad2650aa1ea48af4d5b434775615bf}{mute} ()
+\item 
+void \hyperlink{classMainWindow_a9c091ffb4ff09266707ba8f7c808fd95}{volume} ()
+\item 
+void \hyperlink{classMainWindow_ac06dc02bfa81799a432ee57597f0a5b4}{normalView} ()
+\item 
+void \hyperlink{classMainWindow_aa41d4e806ac8e8eca3c7c768276d9990}{backroundSubView} ()
+\item 
+void \hyperlink{classMainWindow_ae51982f5f1fd69637449af156830a5d8}{handDetectView} ()
+\item 
+void \hyperlink{classMainWindow_afd01705e68779121c241b53e8fe69055}{options} ()
+\item 
+void \hyperlink{classMainWindow_a432ec274d719660e4f772106d2bf320d}{trainerTool} ()
+\item 
+void \hyperlink{classMainWindow_a5d35402881e369e364eab5c647478f5d}{applySettings} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_a62cd8712fb41a754298f6f60eead2cb0}{createActions} ()
+\item 
+void \hyperlink{classMainWindow_aa4907b0251d305659e403c62921ef331}{createMenus} ()
+\item 
+void \hyperlink{classMainWindow_acce4e32b95d3d5cb48470c053a1740c2}{createToolBars} ()
+\item 
+void \hyperlink{classMainWindow_af0a8a3f54a87bd7ad6f23248dd0e9c09}{createStatusBar} ()
+\item 
+void \hyperlink{classMainWindow_a1c7877c1ca466bd8034d88762ce2af9f}{timerEvent} (QTimerEvent $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classMainWindow_a0d680234c97ecdc151020dd0ec09cc54}{mode}
+\item 
+\hyperlink{classPlayAudio}{PlayAudio} $\ast$ \hyperlink{classMainWindow_a662b41536f24ae8944b1fcd7c3c61d65}{audioList}
+\item 
+\hyperlink{classCameraWidget}{CameraWidget} $\ast$ \hyperlink{classMainWindow_a8a71bdff27e71941a425a96a795443b5}{mainCameraWidget}
+\item 
+\hyperlink{classSettings}{Settings} $\ast$ \hyperlink{classMainWindow_ac0a6beb7a11b29e341674239c41cec24}{applicationSettings}
+\item 
+QMenu $\ast$ \hyperlink{classMainWindow_a426da48f6e2f865b07a28533c07c4f7a}{fileMenu}
+\item 
+QMenu $\ast$ \hyperlink{classMainWindow_a6e38d7c63a3dc537d05eafe7e0f5f4db}{viewMenu}
+\item 
+QMenu $\ast$ \hyperlink{classMainWindow_a947c15e520bfea60338b2577f67146b8}{helpMenu}
+\item 
+QMenu $\ast$ \hyperlink{classMainWindow_a4afb06b5d9499439b9fd9d3814b0a356}{toolMenu}
+\item 
+QToolBar $\ast$ \hyperlink{classMainWindow_a0a352c6d66b7a080fcf558874a7e51d4}{fileToolBar}
+\item 
+QToolBar $\ast$ \hyperlink{classMainWindow_a246eb90b537ed23265d2dbffcc066aa8}{viewToolBar}
+\item 
+QToolBar $\ast$ \hyperlink{classMainWindow_aaee0e9ded4637c7fc4ad339712d95986}{controlToolBar}
+\item 
+QSlider $\ast$ \hyperlink{classMainWindow_afb5e35a5e0a66f1054aaa700829d6ff4}{volumeSlider}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_add80706af3d1f3bc4cfa7580b0cbea6d}{normalViewAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_ac5c06b305f10f9ab46b320e15bcf2255}{backgroundSubViewAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_ac2f865b7d3f7d72aba7f76281528c3d3}{handDetectViewAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_a88a89355c71689ae45113472ffe084ee}{startAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_a09f007c020624ddc5d390df40803467b}{stopAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_a4d55df68e5f3e8dd26107c16bab31269}{muteAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_a5f67932fedfa9f47e727c6bcaf9b6d4d}{volumeAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_af702728ef74d0f2d63d0149f9a92a576}{openImageAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_ad11682f531780b5ee71109c3f45fa822}{openVideoAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_a07b31cf99def3b2de7958ffaf2eec463}{aboutAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_ace057e46f03ed0988c768e7d185bae2b}{aboutQtAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_a9d8778fbb596e6a923c2844c2cedfc41}{exitAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_a6a4dce5f772be8e78902061458d7e556}{optionsAct}
+\item 
+QAction $\ast$ \hyperlink{classMainWindow_ae400629a8446466a559ad26c70ac335d}{trainerAct}
+\item 
+QLineEdit $\ast$ \hyperlink{classMainWindow_a504da7e825659f9a9b5db33c0be362d5}{outputText}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classMainWindow}{MainWindow} class. This class manages the whole application interface and its interaction with the user. It has signals and slots to connect and receive feedbacks from the backend of the application. This class creates the toolbars, menus, status bar, etc, for the application and initializes their callback functions. This class also acts as the aggregation of all other modules of the application. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMainWindow_a34c4b4207b46d11a4100c9b19f0e81bb}{
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\subsubsection[{MainWindow}]{\setlength{\rightskip}{0pt plus 5cm}MainWindow::MainWindow (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classMainWindow_a34c4b4207b46d11a4100c9b19f0e81bb}
+A Constructor. The constructor initializes the User Interface of the application by creating the toolbars, actions, statusbar and menus. Their co-\/ rresponding callback slots are also initialized. The initial starting states of the application are also initialized. The openCV camera capture is initialized so that images could be captured from camera. The layout of the application is created and imposed on the window. Basic connections to backend modules are also done in the constructor. 
+
+Call these functions to initalize actions, menus and toolbars.
+
+Create audio list
+
+Initialize opencv camera
+
+Initialize text box
+
+Creating main layout of the application
+
+Starting time to take update from the matching module
+
+Connecting the main window with the camera widget and with the matching module 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMainWindow_a7be6a5d98970ac1a6296c6f9aee1e9bb}{
+\index{MainWindow@{MainWindow}!about@{about}}
+\index{about@{about}!MainWindow@{MainWindow}}
+\subsubsection[{about}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::about (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_a7be6a5d98970ac1a6296c6f9aee1e9bb}
+A normal Qt slot which is called when help tab is clicked.
+
+About the application \hypertarget{classMainWindow_a5d35402881e369e364eab5c647478f5d}{
+\index{MainWindow@{MainWindow}!applySettings@{applySettings}}
+\index{applySettings@{applySettings}!MainWindow@{MainWindow}}
+\subsubsection[{applySettings}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::applySettings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_a5d35402881e369e364eab5c647478f5d}
+A normal Qt slot to change settings for the software.
+
+\hyperlink{classSettings}{Settings} slot \hypertarget{classMainWindow_aa41d4e806ac8e8eca3c7c768276d9990}{
+\index{MainWindow@{MainWindow}!backroundSubView@{backroundSubView}}
+\index{backroundSubView@{backroundSubView}!MainWindow@{MainWindow}}
+\subsubsection[{backroundSubView}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::backroundSubView (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_aa41d4e806ac8e8eca3c7c768276d9990}
+A normal Qt slot to change view to background subtraction.
+
+Switch to background subtracted view \hypertarget{classMainWindow_a43d9aff77dbdddacefda5c8eb43ffae2}{
+\index{MainWindow@{MainWindow}!changeRunningState@{changeRunningState}}
+\index{changeRunningState@{changeRunningState}!MainWindow@{MainWindow}}
+\subsubsection[{changeRunningState}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::changeRunningState (
+\begin{DoxyParamCaption}
+\item[{int}]{ state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{classMainWindow_a43d9aff77dbdddacefda5c8eb43ffae2}
+A Qt Signal emitted when user presses play/stop button. 
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]an integer denoting the running state of the system. \end{DoxyParams}
+\hypertarget{classMainWindow_a4e20a4a065fbb0e4d3532a45a0a91425}{
+\index{MainWindow@{MainWindow}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!MainWindow@{MainWindow}}
+\subsubsection[{closeEvent}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::closeEvent (
+\begin{DoxyParamCaption}
+\item[{QCloseEvent $\ast$}]{ event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classMainWindow_a4e20a4a065fbb0e4d3532a45a0a91425}
+A normal member function taking one argument. This function is called when the application closes. It is res-\/ ponsible for closing all the files and remove backend connections before closing the application. 
+\begin{DoxyParams}{Parameters}
+\item[{\em event}]a QCloseEvent pointer used to refer when closing app.\end{DoxyParams}
+Close event \hypertarget{classMainWindow_a62cd8712fb41a754298f6f60eead2cb0}{
+\index{MainWindow@{MainWindow}!createActions@{createActions}}
+\index{createActions@{createActions}!MainWindow@{MainWindow}}
+\subsubsection[{createActions}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::createActions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a62cd8712fb41a754298f6f60eead2cb0}
+A Function to create Actions which are being used in the application and initialization of the connections pertaining to those actions.
+
+Create actions required in the application 
+
+Create actions for switching to normal view
+
+Create actions for switching to background subtraction view
+
+Create actions for switching to hand detection view
+
+Create action to open image file as input
+
+Create action to open video file as input
+
+Create action to start gesture recognition
+
+Create action to stop gesture recognition
+
+Create mute action
+
+Create volume change action
+
+Create action to view about help for application
+
+Create action to change about Qt help for application
+
+Create exit action for the application
+
+Create trainer action for the application 
+
+\hypertarget{classMainWindow_aa4907b0251d305659e403c62921ef331}{
+\index{MainWindow@{MainWindow}!createMenus@{createMenus}}
+\index{createMenus@{createMenus}!MainWindow@{MainWindow}}
+\subsubsection[{createMenus}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::createMenus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_aa4907b0251d305659e403c62921ef331}
+A Private Function. Creates the menus used in the user interface.
+
+Create menus 
+
+Creating file menu bar
+
+Creating file view bar
+
+Creating tools menu
+
+Creating file help bar 
+
+\hypertarget{classMainWindow_af0a8a3f54a87bd7ad6f23248dd0e9c09}{
+\index{MainWindow@{MainWindow}!createStatusBar@{createStatusBar}}
+\index{createStatusBar@{createStatusBar}!MainWindow@{MainWindow}}
+\subsubsection[{createStatusBar}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::createStatusBar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_af0a8a3f54a87bd7ad6f23248dd0e9c09}
+A Private Function. This creates the status bar for the application and initializes the data to be shown in the status bar.
+
+Creating status bar for the application \hypertarget{classMainWindow_acce4e32b95d3d5cb48470c053a1740c2}{
+\index{MainWindow@{MainWindow}!createToolBars@{createToolBars}}
+\index{createToolBars@{createToolBars}!MainWindow@{MainWindow}}
+\subsubsection[{createToolBars}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::createToolBars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_acce4e32b95d3d5cb48470c053a1740c2}
+A Private Function. Creates toolbars for the user interface and initializes their actions which are called when tool buttons are clicked.
+
+Creating tool bars 
+
+Creating volume slider on the interface
+
+Creating file toolbar
+
+Creating tool bar for changing views
+
+Creating toolbar for controlling the recognition timers and volumes 
+
+\hypertarget{classMainWindow_a6c232109b263942229aa84d55924f8a3}{
+\index{MainWindow@{MainWindow}!displayRecognizedAlphabet@{displayRecognizedAlphabet}}
+\index{displayRecognizedAlphabet@{displayRecognizedAlphabet}!MainWindow@{MainWindow}}
+\subsubsection[{displayRecognizedAlphabet}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::displayRecognizedAlphabet (
+\begin{DoxyParamCaption}
+\item[{char}]{ c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{classMainWindow_a6c232109b263942229aa84d55924f8a3}
+A Qt slot callback function taking a character as argument. This slot receives the signal from matching module whenever a character is matched and is updated in the main interface. 
+\begin{DoxyParams}{Parameters}
+\item[{\em c}]a character type which is the recognized character of that slot.\end{DoxyParams}
+Display matched text \hypertarget{classMainWindow_ae51982f5f1fd69637449af156830a5d8}{
+\index{MainWindow@{MainWindow}!handDetectView@{handDetectView}}
+\index{handDetectView@{handDetectView}!MainWindow@{MainWindow}}
+\subsubsection[{handDetectView}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::handDetectView (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_ae51982f5f1fd69637449af156830a5d8}
+A normal Qt slot to change view ot hand detection view.
+
+Switch to hand detect view \hypertarget{classMainWindow_acbad2650aa1ea48af4d5b434775615bf}{
+\index{MainWindow@{MainWindow}!mute@{mute}}
+\index{mute@{mute}!MainWindow@{MainWindow}}
+\subsubsection[{mute}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::mute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_acbad2650aa1ea48af4d5b434775615bf}
+A normal Qt slot which is called when mute button is pressed.
+
+Mute the volume \hypertarget{classMainWindow_ac06dc02bfa81799a432ee57597f0a5b4}{
+\index{MainWindow@{MainWindow}!normalView@{normalView}}
+\index{normalView@{normalView}!MainWindow@{MainWindow}}
+\subsubsection[{normalView}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::normalView (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_ac06dc02bfa81799a432ee57597f0a5b4}
+A normal Qt slot to change view to normal mode.
+
+Switch to normal view \hypertarget{classMainWindow_ab036b89cc10ef5d41ee92df1ce243ba0}{
+\index{MainWindow@{MainWindow}!openImage@{openImage}}
+\index{openImage@{openImage}!MainWindow@{MainWindow}}
+\subsubsection[{openImage}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::openImage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_ab036b89cc10ef5d41ee92df1ce243ba0}
+A normal Qt slot which is called when user tries to give image as the input file. 
+
+Open file dialog box for opening the image 
+
+\hypertarget{classMainWindow_a522431183b98bcfd052e9fc1a59d6d68}{
+\index{MainWindow@{MainWindow}!openVideo@{openVideo}}
+\index{openVideo@{openVideo}!MainWindow@{MainWindow}}
+\subsubsection[{openVideo}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::openVideo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_a522431183b98bcfd052e9fc1a59d6d68}
+A normal Qt slot which is called when user gives video as the input file for the system. 
+
+Open file dialog box for opening the videos 
+
+\hypertarget{classMainWindow_aa33e1f745d6203631229f131a9a06baa}{
+\index{MainWindow@{MainWindow}!operationalModeChange@{operationalModeChange}}
+\index{operationalModeChange@{operationalModeChange}!MainWindow@{MainWindow}}
+\subsubsection[{operationalModeChange}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::operationalModeChange (
+\begin{DoxyParamCaption}
+\item[{int}]{ type, }
+\item[{QString}]{ filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{classMainWindow_aa33e1f745d6203631229f131a9a06baa}
+A Qt Signal emitted when user tries to provide input from file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]an integer denoting the input mode of user. \item[{\em filename}]a QString type denoting the input filename. \end{DoxyParams}
+\hypertarget{classMainWindow_afd01705e68779121c241b53e8fe69055}{
+\index{MainWindow@{MainWindow}!options@{options}}
+\index{options@{options}!MainWindow@{MainWindow}}
+\subsubsection[{options}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::options (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_afd01705e68779121c241b53e8fe69055}
+A normal Qt slot to options for the software.
+
+Option slot \hypertarget{classMainWindow_ac6730e1b5d17d777746e3cc8e62dff49}{
+\index{MainWindow@{MainWindow}!startRecognition@{startRecognition}}
+\index{startRecognition@{startRecognition}!MainWindow@{MainWindow}}
+\subsubsection[{startRecognition}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::startRecognition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_ac6730e1b5d17d777746e3cc8e62dff49}
+A normal Qt slot which is called when user is ready to start. recognition of his gesture and clicks on the play button.
+
+Start gesture recognition \hypertarget{classMainWindow_aa47167647627b38fcac3ce61542caf68}{
+\index{MainWindow@{MainWindow}!stopRecognition@{stopRecognition}}
+\index{stopRecognition@{stopRecognition}!MainWindow@{MainWindow}}
+\subsubsection[{stopRecognition}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::stopRecognition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_aa47167647627b38fcac3ce61542caf68}
+A normal Qt slot which is called when user is wants to stop recognition of his gesture and clicks on the stop button.
+
+Stop gesture recognition \hypertarget{classMainWindow_a1c7877c1ca466bd8034d88762ce2af9f}{
+\index{MainWindow@{MainWindow}!timerEvent@{timerEvent}}
+\index{timerEvent@{timerEvent}!MainWindow@{MainWindow}}
+\subsubsection[{timerEvent}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::timerEvent (
+\begin{DoxyParamCaption}
+\item[{QTimerEvent $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a1c7877c1ca466bd8034d88762ce2af9f}
+A Private callback function. This is a timer callback function which is called every N seconds. In every three seconds, it calls the matching module for the matched symbol and gets its update.
+
+Timer callback function \hypertarget{classMainWindow_a432ec274d719660e4f772106d2bf320d}{
+\index{MainWindow@{MainWindow}!trainerTool@{trainerTool}}
+\index{trainerTool@{trainerTool}!MainWindow@{MainWindow}}
+\subsubsection[{trainerTool}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::trainerTool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_a432ec274d719660e4f772106d2bf320d}
+A normal Qt slot to display trainer tool for the software.
+
+Trainer slot \hypertarget{classMainWindow_af583ca0e72c1f9583906ae3ead0555e9}{
+\index{MainWindow@{MainWindow}!ViewTypeChange@{ViewTypeChange}}
+\index{ViewTypeChange@{ViewTypeChange}!MainWindow@{MainWindow}}
+\subsubsection[{ViewTypeChange}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::ViewTypeChange (
+\begin{DoxyParamCaption}
+\item[{int}]{ type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{classMainWindow_af583ca0e72c1f9583906ae3ead0555e9}
+A Qt Signal taking view type (integer) as input. This signal is emitted whenever the user clicks on any of the view change buttons to see the other stages of the image processing on the input provided. 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]an integer denoting the view type mode of system. \end{DoxyParams}
+\hypertarget{classMainWindow_a9c091ffb4ff09266707ba8f7c808fd95}{
+\index{MainWindow@{MainWindow}!volume@{volume}}
+\index{volume@{volume}!MainWindow@{MainWindow}}
+\subsubsection[{volume}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::volume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, slot\mbox{]}}}}
+\label{classMainWindow_a9c091ffb4ff09266707ba8f7c808fd95}
+A normal Qt slot which is called when user increases or decreases the volume.
+
+Change volume 
+
+\subsection{Member Data Documentation}
+\hypertarget{classMainWindow_a07b31cf99def3b2de7958ffaf2eec463}{
+\index{MainWindow@{MainWindow}!aboutAct@{aboutAct}}
+\index{aboutAct@{aboutAct}!MainWindow@{MainWindow}}
+\subsubsection[{aboutAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::aboutAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a07b31cf99def3b2de7958ffaf2eec463}
+A private QAction variable pointer. This action is triggered when about Application is clicked. \hypertarget{classMainWindow_ace057e46f03ed0988c768e7d185bae2b}{
+\index{MainWindow@{MainWindow}!aboutQtAct@{aboutQtAct}}
+\index{aboutQtAct@{aboutQtAct}!MainWindow@{MainWindow}}
+\subsubsection[{aboutQtAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::aboutQtAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_ace057e46f03ed0988c768e7d185bae2b}
+A private QAction variable pointer. This action is triggered when about Qt is clicked. \hypertarget{classMainWindow_ac0a6beb7a11b29e341674239c41cec24}{
+\index{MainWindow@{MainWindow}!applicationSettings@{applicationSettings}}
+\index{applicationSettings@{applicationSettings}!MainWindow@{MainWindow}}
+\subsubsection[{applicationSettings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Settings}$\ast$ {\bf MainWindow::applicationSettings}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_ac0a6beb7a11b29e341674239c41cec24}
+\hypertarget{classMainWindow_a662b41536f24ae8944b1fcd7c3c61d65}{
+\index{MainWindow@{MainWindow}!audioList@{audioList}}
+\index{audioList@{audioList}!MainWindow@{MainWindow}}
+\subsubsection[{audioList}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PlayAudio}$\ast$ {\bf MainWindow::audioList}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a662b41536f24ae8944b1fcd7c3c61d65}
+A private \hyperlink{classPlayAudio}{PlayAudio} pointer. This pointer is used to link the audio output module to the interface and the characters/words to be spoken and send to the member function of this class so that it can be commu-\/ nicated to the hardware. \hypertarget{classMainWindow_ac5c06b305f10f9ab46b320e15bcf2255}{
+\index{MainWindow@{MainWindow}!backgroundSubViewAct@{backgroundSubViewAct}}
+\index{backgroundSubViewAct@{backgroundSubViewAct}!MainWindow@{MainWindow}}
+\subsubsection[{backgroundSubViewAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::backgroundSubViewAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_ac5c06b305f10f9ab46b320e15bcf2255}
+A private QAction variable pointer. This action is used change view mode value of the application. \hypertarget{classMainWindow_aaee0e9ded4637c7fc4ad339712d95986}{
+\index{MainWindow@{MainWindow}!controlToolBar@{controlToolBar}}
+\index{controlToolBar@{controlToolBar}!MainWindow@{MainWindow}}
+\subsubsection[{controlToolBar}]{\setlength{\rightskip}{0pt plus 5cm}QToolBar$\ast$ {\bf MainWindow::controlToolBar}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_aaee0e9ded4637c7fc4ad339712d95986}
+A private QMenu variable pointer. This variable stores the control Toolbar of the interface. \hypertarget{classMainWindow_a9d8778fbb596e6a923c2844c2cedfc41}{
+\index{MainWindow@{MainWindow}!exitAct@{exitAct}}
+\index{exitAct@{exitAct}!MainWindow@{MainWindow}}
+\subsubsection[{exitAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::exitAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a9d8778fbb596e6a923c2844c2cedfc41}
+A private QAction variable pointer. This is action is triggered when application is going to close. \hypertarget{classMainWindow_a426da48f6e2f865b07a28533c07c4f7a}{
+\index{MainWindow@{MainWindow}!fileMenu@{fileMenu}}
+\index{fileMenu@{fileMenu}!MainWindow@{MainWindow}}
+\subsubsection[{fileMenu}]{\setlength{\rightskip}{0pt plus 5cm}QMenu$\ast$ {\bf MainWindow::fileMenu}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a426da48f6e2f865b07a28533c07c4f7a}
+A private QMenu variable pointer. This variable stores the file menu of the interface. \hypertarget{classMainWindow_a0a352c6d66b7a080fcf558874a7e51d4}{
+\index{MainWindow@{MainWindow}!fileToolBar@{fileToolBar}}
+\index{fileToolBar@{fileToolBar}!MainWindow@{MainWindow}}
+\subsubsection[{fileToolBar}]{\setlength{\rightskip}{0pt plus 5cm}QToolBar$\ast$ {\bf MainWindow::fileToolBar}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a0a352c6d66b7a080fcf558874a7e51d4}
+A private QToolBar variable pointer. This variable stores the file toolbar of the interface. \hypertarget{classMainWindow_ac2f865b7d3f7d72aba7f76281528c3d3}{
+\index{MainWindow@{MainWindow}!handDetectViewAct@{handDetectViewAct}}
+\index{handDetectViewAct@{handDetectViewAct}!MainWindow@{MainWindow}}
+\subsubsection[{handDetectViewAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::handDetectViewAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_ac2f865b7d3f7d72aba7f76281528c3d3}
+A private QAction variable pointer. This action is used to change view mode to hand detection. \hypertarget{classMainWindow_a947c15e520bfea60338b2577f67146b8}{
+\index{MainWindow@{MainWindow}!helpMenu@{helpMenu}}
+\index{helpMenu@{helpMenu}!MainWindow@{MainWindow}}
+\subsubsection[{helpMenu}]{\setlength{\rightskip}{0pt plus 5cm}QMenu$\ast$ {\bf MainWindow::helpMenu}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a947c15e520bfea60338b2577f67146b8}
+A private QMenu variable pointer. This variable stores the help menu of the application. \hypertarget{classMainWindow_a8a71bdff27e71941a425a96a795443b5}{
+\index{MainWindow@{MainWindow}!mainCameraWidget@{mainCameraWidget}}
+\index{mainCameraWidget@{mainCameraWidget}!MainWindow@{MainWindow}}
+\subsubsection[{mainCameraWidget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CameraWidget}$\ast$ {\bf MainWindow::mainCameraWidget}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a8a71bdff27e71941a425a96a795443b5}
+A private \hyperlink{classCameraWidget}{CameraWidget} variable pointer. This pointer is used to access the \hyperlink{classCameraWidget}{CameraWidget} in the main interface. This pointer helps to send information to the main backend module. \hypertarget{classMainWindow_a0d680234c97ecdc151020dd0ec09cc54}{
+\index{MainWindow@{MainWindow}!mode@{mode}}
+\index{mode@{mode}!MainWindow@{MainWindow}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf MainWindow::mode}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a0d680234c97ecdc151020dd0ec09cc54}
+A private variable. The value in the variable shows the state in which system is operating. Three modes are Video Input mode, Image Input mode and Normal Webcam mode. \hypertarget{classMainWindow_a4d55df68e5f3e8dd26107c16bab31269}{
+\index{MainWindow@{MainWindow}!muteAct@{muteAct}}
+\index{muteAct@{muteAct}!MainWindow@{MainWindow}}
+\subsubsection[{muteAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::muteAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a4d55df68e5f3e8dd26107c16bab31269}
+A private QAction variable pointer. This action mutes the volume. \hypertarget{classMainWindow_add80706af3d1f3bc4cfa7580b0cbea6d}{
+\index{MainWindow@{MainWindow}!normalViewAct@{normalViewAct}}
+\index{normalViewAct@{normalViewAct}!MainWindow@{MainWindow}}
+\subsubsection[{normalViewAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::normalViewAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_add80706af3d1f3bc4cfa7580b0cbea6d}
+A private QAction variable pointer. This action is used to change view mode to normal webcam mode. \hypertarget{classMainWindow_af702728ef74d0f2d63d0149f9a92a576}{
+\index{MainWindow@{MainWindow}!openImageAct@{openImageAct}}
+\index{openImageAct@{openImageAct}!MainWindow@{MainWindow}}
+\subsubsection[{openImageAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::openImageAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_af702728ef74d0f2d63d0149f9a92a576}
+A private QAction variable pointer. This action opens a file dialog window for opening image. \hypertarget{classMainWindow_ad11682f531780b5ee71109c3f45fa822}{
+\index{MainWindow@{MainWindow}!openVideoAct@{openVideoAct}}
+\index{openVideoAct@{openVideoAct}!MainWindow@{MainWindow}}
+\subsubsection[{openVideoAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::openVideoAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_ad11682f531780b5ee71109c3f45fa822}
+A private QAction variable pointer. This action opens a file dialog window for opening video. \hypertarget{classMainWindow_a6a4dce5f772be8e78902061458d7e556}{
+\index{MainWindow@{MainWindow}!optionsAct@{optionsAct}}
+\index{optionsAct@{optionsAct}!MainWindow@{MainWindow}}
+\subsubsection[{optionsAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::optionsAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a6a4dce5f772be8e78902061458d7e556}
+A private QAction variable pointer. This action is triggered when options is clicked from the tools menu. \hypertarget{classMainWindow_a504da7e825659f9a9b5db33c0be362d5}{
+\index{MainWindow@{MainWindow}!outputText@{outputText}}
+\index{outputText@{outputText}!MainWindow@{MainWindow}}
+\subsubsection[{outputText}]{\setlength{\rightskip}{0pt plus 5cm}QLineEdit$\ast$ {\bf MainWindow::outputText}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a504da7e825659f9a9b5db33c0be362d5}
+A private QLineEdit variable pointer. This is the text box which is shown at the bottom page of the application. This stores all the characters which have been recorded till now and shows it on the interface. \hypertarget{classMainWindow_a88a89355c71689ae45113472ffe084ee}{
+\index{MainWindow@{MainWindow}!startAct@{startAct}}
+\index{startAct@{startAct}!MainWindow@{MainWindow}}
+\subsubsection[{startAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::startAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a88a89355c71689ae45113472ffe084ee}
+A private QAction variable pointer. This action starts the gesture recognition activity. \hypertarget{classMainWindow_a09f007c020624ddc5d390df40803467b}{
+\index{MainWindow@{MainWindow}!stopAct@{stopAct}}
+\index{stopAct@{stopAct}!MainWindow@{MainWindow}}
+\subsubsection[{stopAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::stopAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a09f007c020624ddc5d390df40803467b}
+A private QAction variable pointer. This action stops the gesture recognition activity. \hypertarget{classMainWindow_a4afb06b5d9499439b9fd9d3814b0a356}{
+\index{MainWindow@{MainWindow}!toolMenu@{toolMenu}}
+\index{toolMenu@{toolMenu}!MainWindow@{MainWindow}}
+\subsubsection[{toolMenu}]{\setlength{\rightskip}{0pt plus 5cm}QMenu$\ast$ {\bf MainWindow::toolMenu}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a4afb06b5d9499439b9fd9d3814b0a356}
+A priavte QMenu variable pointer. This variable creates the tools menu of the application. \hypertarget{classMainWindow_ae400629a8446466a559ad26c70ac335d}{
+\index{MainWindow@{MainWindow}!trainerAct@{trainerAct}}
+\index{trainerAct@{trainerAct}!MainWindow@{MainWindow}}
+\subsubsection[{trainerAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::trainerAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_ae400629a8446466a559ad26c70ac335d}
+A private QAction variable pointer. This action is triggered when user clicks on training option from tools menu. \hypertarget{classMainWindow_a6e38d7c63a3dc537d05eafe7e0f5f4db}{
+\index{MainWindow@{MainWindow}!viewMenu@{viewMenu}}
+\index{viewMenu@{viewMenu}!MainWindow@{MainWindow}}
+\subsubsection[{viewMenu}]{\setlength{\rightskip}{0pt plus 5cm}QMenu$\ast$ {\bf MainWindow::viewMenu}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a6e38d7c63a3dc537d05eafe7e0f5f4db}
+A private QMenu variable pointer. This variable stores the view menu of the application. \hypertarget{classMainWindow_a246eb90b537ed23265d2dbffcc066aa8}{
+\index{MainWindow@{MainWindow}!viewToolBar@{viewToolBar}}
+\index{viewToolBar@{viewToolBar}!MainWindow@{MainWindow}}
+\subsubsection[{viewToolBar}]{\setlength{\rightskip}{0pt plus 5cm}QToolBar$\ast$ {\bf MainWindow::viewToolBar}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a246eb90b537ed23265d2dbffcc066aa8}
+A private QToolBar variable pointer. This variable stores the view toolbar of the interface. \hypertarget{classMainWindow_a5f67932fedfa9f47e727c6bcaf9b6d4d}{
+\index{MainWindow@{MainWindow}!volumeAct@{volumeAct}}
+\index{volumeAct@{volumeAct}!MainWindow@{MainWindow}}
+\subsubsection[{volumeAct}]{\setlength{\rightskip}{0pt plus 5cm}QAction$\ast$ {\bf MainWindow::volumeAct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_a5f67932fedfa9f47e727c6bcaf9b6d4d}
+A private QAction variable pointer. This action triggers the change in volume. \hypertarget{classMainWindow_afb5e35a5e0a66f1054aaa700829d6ff4}{
+\index{MainWindow@{MainWindow}!volumeSlider@{volumeSlider}}
+\index{volumeSlider@{volumeSlider}!MainWindow@{MainWindow}}
+\subsubsection[{volumeSlider}]{\setlength{\rightskip}{0pt plus 5cm}QSlider$\ast$ {\bf MainWindow::volumeSlider}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classMainWindow_afb5e35a5e0a66f1054aaa700829d6ff4}
+A private QSlider variable pointer. This slider is used to get changed value of the volume. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{mainwindow_8h}{mainwindow.h}\item 
+\hyperlink{mainwindow_8cpp}{mainwindow.cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,95 @@
+\hypertarget{cameraWidget_8h}{
+\section{cameraWidget.h File Reference}
+\label{cameraWidget_8h}\index{cameraWidget.h@{cameraWidget.h}}
+}
+{\ttfamily \#include $<$QWidget$>$}\par
+{\ttfamily \#include $<$QVBoxLayout$>$}\par
+{\ttfamily \#include \char`\"{}openCVWidget.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}matching.h\char`\"{}}\par
+{\ttfamily \#include $<$opencv/cv.h$>$}\par
+{\ttfamily \#include $<$opencv/highgui.h$>$}\par
+{\ttfamily \#include \char`\"{}backgroundSubtraction.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCameraWidget}{CameraWidget}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55baf8e7b900ded6d1f8eb98691fc7806b9a}{WEBCAM} = 0, 
+\hyperlink{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55baac54b95d80b84ce55bbf1c9c42310a98}{VIDEOFILE}, 
+\hyperlink{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55ba1aae69fb649ebebb61a3547100a042fe}{IMAGEFILE}
+ \}
+\item 
+enum \{ \hyperlink{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7afb1a2aacf44018446d5fc3abc8baf1db}{NORMALVIEW} =  0, 
+\hyperlink{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7ad47ae21449a6e855ea259dfdb759f7c6}{BACKGROUNDSUB}, 
+\hyperlink{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7a6a097131f0f2981ad11e8983463a87d5}{HANDDETECT}
+ \}
+\item 
+enum \{ \hyperlink{cameraWidget_8h_a99fb83031ce9923c84392b4e92f956b5a0352906d1ea1dfcd663c918f3a86755b}{PLAY} =  0, 
+\hyperlink{cameraWidget_8h_a99fb83031ce9923c84392b4e92f956b5a56b36d0d0bb01b339cf1041adc08e262}{PAUSE}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55b}{
+\subsubsection[{"@0}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55b}
+An Enum. These enum values show the system modes in which the application is being operated. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{WEBCAM@{WEBCAM}!cameraWidget.h@{cameraWidget.h}}\index{cameraWidget.h@{cameraWidget.h}!WEBCAM@{WEBCAM}}\item[{\em 
+\hypertarget{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55baf8e7b900ded6d1f8eb98691fc7806b9a}{
+WEBCAM}
+\label{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55baf8e7b900ded6d1f8eb98691fc7806b9a}
+}]enum value WEBCAM for webcam mode. \index{VIDEOFILE@{VIDEOFILE}!cameraWidget.h@{cameraWidget.h}}\index{cameraWidget.h@{cameraWidget.h}!VIDEOFILE@{VIDEOFILE}}\item[{\em 
+\hypertarget{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55baac54b95d80b84ce55bbf1c9c42310a98}{
+VIDEOFILE}
+\label{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55baac54b95d80b84ce55bbf1c9c42310a98}
+}]enum value VIDEOFILE for stored video mode. \index{IMAGEFILE@{IMAGEFILE}!cameraWidget.h@{cameraWidget.h}}\index{cameraWidget.h@{cameraWidget.h}!IMAGEFILE@{IMAGEFILE}}\item[{\em 
+\hypertarget{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55ba1aae69fb649ebebb61a3547100a042fe}{
+IMAGEFILE}
+\label{cameraWidget_8h_a06fc87d81c62e9abb8790b6e5713c55ba1aae69fb649ebebb61a3547100a042fe}
+}]enum value IMAGEFILE for image mode. \end{description}
+\end{Desc}
+
+\hypertarget{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7}{
+\subsubsection[{"@1}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7}
+An Enum. These enum values show the view modes in which the application is being operated. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NORMALVIEW@{NORMALVIEW}!cameraWidget.h@{cameraWidget.h}}\index{cameraWidget.h@{cameraWidget.h}!NORMALVIEW@{NORMALVIEW}}\item[{\em 
+\hypertarget{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7afb1a2aacf44018446d5fc3abc8baf1db}{
+NORMALVIEW}
+\label{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7afb1a2aacf44018446d5fc3abc8baf1db}
+}]enum value NORMAL for webcam view. \index{BACKGROUNDSUB@{BACKGROUNDSUB}!cameraWidget.h@{cameraWidget.h}}\index{cameraWidget.h@{cameraWidget.h}!BACKGROUNDSUB@{BACKGROUNDSUB}}\item[{\em 
+\hypertarget{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7ad47ae21449a6e855ea259dfdb759f7c6}{
+BACKGROUNDSUB}
+\label{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7ad47ae21449a6e855ea259dfdb759f7c6}
+}]enum value BACKGROUNDSUB for bgsubtraction view. \index{HANDDETECT@{HANDDETECT}!cameraWidget.h@{cameraWidget.h}}\index{cameraWidget.h@{cameraWidget.h}!HANDDETECT@{HANDDETECT}}\item[{\em 
+\hypertarget{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7a6a097131f0f2981ad11e8983463a87d5}{
+HANDDETECT}
+\label{cameraWidget_8h_adf764cbdea00d65edcd07bb9953ad2b7a6a097131f0f2981ad11e8983463a87d5}
+}]enum value HANDDETECT for hand detection view. \end{description}
+\end{Desc}
+
+\hypertarget{cameraWidget_8h_a99fb83031ce9923c84392b4e92f956b5}{
+\subsubsection[{"@2}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{cameraWidget_8h_a99fb83031ce9923c84392b4e92f956b5}
+An Enum. These enum values show whether the system running or is in paused state. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{PLAY@{PLAY}!cameraWidget.h@{cameraWidget.h}}\index{cameraWidget.h@{cameraWidget.h}!PLAY@{PLAY}}\item[{\em 
+\hypertarget{cameraWidget_8h_a99fb83031ce9923c84392b4e92f956b5a0352906d1ea1dfcd663c918f3a86755b}{
+PLAY}
+\label{cameraWidget_8h_a99fb83031ce9923c84392b4e92f956b5a0352906d1ea1dfcd663c918f3a86755b}
+}]enum value PLAY for the system to start recognition. \index{PAUSE@{PAUSE}!cameraWidget.h@{cameraWidget.h}}\index{cameraWidget.h@{cameraWidget.h}!PAUSE@{PAUSE}}\item[{\em 
+\hypertarget{cameraWidget_8h_a99fb83031ce9923c84392b4e92f956b5a56b36d0d0bb01b339cf1041adc08e262}{
+PAUSE}
+\label{cameraWidget_8h_a99fb83031ce9923c84392b4e92f956b5a56b36d0d0bb01b339cf1041adc08e262}
+}]enum value PAUSE for the system to stop recognition. \end{description}
+\end{Desc}
+

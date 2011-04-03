@@ -1,0 +1,319 @@
+\hypertarget{classHeap}{
+\section{Heap$<$ type $>$ Class Template Reference}
+\label{classHeap}\index{Heap@{Heap}}
+}
+
+
+{\ttfamily \#include $<$heap.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHeap_a033355743d1902b8e4cf6830cd8e3ddb}{Heap} (int IntArray\mbox{[}$\,$\mbox{]}, int Count)
+\item 
+\hyperlink{classHeap_a22b479991c536c7eb47a9bdf06d4dac6}{Heap} (int MAXSIZE)
+\item 
+type \hyperlink{classHeap_a2702a0d3142511c53b01c6d4a225e795}{Delete} ()
+\item 
+void \hyperlink{classHeap_aee71c9c62bfe019dba075fb766fbe66f}{Insert} (type Item)
+\item 
+type \hyperlink{classHeap_ad03a7a9eae5a24707e6190880123735e}{FindMax} ()
+\item 
+type \hyperlink{classHeap_a939367f091812b74651236c84b33cb4c}{FindMin} ()
+\item 
+bool \hyperlink{classHeap_ac9070548295b929b26eaae4f9f33feeb}{IsEmpty} ()
+\item 
+void \hyperlink{classHeap_ad7de4787b16904d60a0ee9093a13f44c}{SORT} (type IntAarray\mbox{[}$\,$\mbox{]}, int MAX)
+\item 
+void \hyperlink{classHeap_aae20fa71a0bd66d3c38530903d98d0c9}{Remove} (type item)
+\item 
+type \hyperlink{classHeap_a1da405a605c455cd721ac76906357e38}{operator\mbox{[}$\,$\mbox{]}} (int index)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classHeap_aa8f01571013d2d60f3b7358171c5e820}{FilterDown} (int StartIndex)
+\item 
+void \hyperlink{classHeap_a565386e79c3c6574dd82a7279755c3c1}{FilterUp} (int StartIndex)
+\item 
+int \hyperlink{classHeap_a2a963d8d9b9e8d8cc2ba9300e8a3ddbc}{Parent} (int CurrentIndex)
+\item 
+int \hyperlink{classHeap_a281ae8764bfc807afb0fe0989a1ac8d8}{RightChild} (int CurrentIndex)
+\item 
+int \hyperlink{classHeap_ab70ece2a97d7f2acae076eeab520bb4b}{LeftChild} (int CurrentIndex)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+type $\ast$ \hyperlink{classHeap_ac72ccab357597f7af528ff8fd2a1e407}{HeapArrayPtr}
+\item 
+int \hyperlink{classHeap_a9690145e2e3d0de97a8c4c79b704ec97}{MaxHeapSize}
+\item 
+int \hyperlink{classHeap_a42943c5d99db91b35800324be31941f5}{HeapSize}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename type$>$ class Heap$<$ type $>$}
+
+\hyperlink{classHeap}{Heap} class. This is a templatized heap class which takes any object as the heap input(on which $>$ and $<$ operators are overloaded) and organizes them in the heap to keep the maximum at the top of the heap. Though a lot of functionalities are given in this class but this application requires only max heap to be calculated which will be used in the matching module to calculate maximum number of occurences of the matched character. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classHeap_a033355743d1902b8e4cf6830cd8e3ddb}{
+\index{Heap@{Heap}!Heap@{Heap}}
+\index{Heap@{Heap}!Heap@{Heap}}
+\subsubsection[{Heap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ {\bf Heap}$<$ type $>$::{\bf Heap} (
+\begin{DoxyParamCaption}
+\item[{int}]{ IntArray\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{ Count}
+\end{DoxyParamCaption}
+)}}
+\label{classHeap_a033355743d1902b8e4cf6830cd8e3ddb}
+Constructor. Initializes the basic variables used in the heap class. 
+\begin{DoxyParams}{Parameters}
+\item[{\em IntArray\mbox{[}$\,$\mbox{]}}]an integer array of heaps. \item[{\em Count}]an integer saying number of items in the array. \end{DoxyParams}
+
+
+A pointer assignment statement
+
+Set CurrentPosition to the last index of a parent node:
+
+Get heap condition for subtree rooted at index CurrentPosition: 
+
+\hypertarget{classHeap_a22b479991c536c7eb47a9bdf06d4dac6}{
+\index{Heap@{Heap}!Heap@{Heap}}
+\index{Heap@{Heap}!Heap@{Heap}}
+\subsubsection[{Heap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ {\bf Heap}$<$ type $>$::{\bf Heap} (
+\begin{DoxyParamCaption}
+\item[{int}]{ MAXSIZE}
+\end{DoxyParamCaption}
+)}}
+\label{classHeap_a22b479991c536c7eb47a9bdf06d4dac6}
+Contructor. Initializes the basic variable used in the heap class. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MAXSIZE}]integer variable which defines the maximum number of inputs which the heap can take.\end{DoxyParams}
+Constructor declaration. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classHeap_a2702a0d3142511c53b01c6d4a225e795}{
+\index{Heap@{Heap}!Delete@{Delete}}
+\index{Delete@{Delete}!Heap@{Heap}}
+\subsubsection[{Delete}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ type {\bf Heap}$<$ type $>$::Delete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classHeap_a2702a0d3142511c53b01c6d4a225e795}
+A public function which returns $<$template type$>$=\char`\"{}\char`\"{}$>$. This function deletes an element from the heap and returns that element. In max heap, the maximum element is deleted and in min heap, the minimum element is deleted.
+
+DELETE() 
+
+Item at index 0 is the smallest
+
+Copy last one to root:
+
+readjust to be a heap 
+
+\hypertarget{classHeap_aa8f01571013d2d60f3b7358171c5e820}{
+\index{Heap@{Heap}!FilterDown@{FilterDown}}
+\index{FilterDown@{FilterDown}!Heap@{Heap}}
+\subsubsection[{FilterDown}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ void {\bf Heap}$<$ type $>$::FilterDown (
+\begin{DoxyParamCaption}
+\item[{int}]{ StartIndex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classHeap_aa8f01571013d2d60f3b7358171c5e820}
+A private function. This function is used to heapify all the data stored in the array from top of the heap tree to the bottom. 
+\begin{DoxyParams}{Parameters}
+\item[{\em StartIndex}]an integer type denoting the node of the tree to start hipification.\end{DoxyParams}
+FILTER DOWN() 
+
+Set ChildPosition to index of smaller of right, left children:
+
+Get out of loop, heap OK with Target at CurrentPosition
+
+Move value of the smaller child to the parent node:
+
+Move down the tree:
+
+Put Target into the correct location: 
+
+\hypertarget{classHeap_a565386e79c3c6574dd82a7279755c3c1}{
+\index{Heap@{Heap}!FilterUp@{FilterUp}}
+\index{FilterUp@{FilterUp}!Heap@{Heap}}
+\subsubsection[{FilterUp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ void {\bf Heap}$<$ type $>$::FilterUp (
+\begin{DoxyParamCaption}
+\item[{int}]{ StartIndex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classHeap_a565386e79c3c6574dd82a7279755c3c1}
+A private function. This function is used to heapify all the data stored in the array from bottom of the heap tree to the up. 
+\begin{DoxyParams}{Parameters}
+\item[{\em StartIndex}]an integer type denoting the node of the tree to start hipification.\end{DoxyParams}
+FILTER UP() 
+
+Get out of loop, heap OK with Target at CurrentPosition
+
+Move parent value to child:
+
+Move up in the tree:
+
+Place Target at the position located for it: 
+
+\hypertarget{classHeap_ad03a7a9eae5a24707e6190880123735e}{
+\index{Heap@{Heap}!FindMax@{FindMax}}
+\index{FindMax@{FindMax}!Heap@{Heap}}
+\subsubsection[{FindMax}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ type {\bf Heap}$<$ type $>$::FindMax (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classHeap_ad03a7a9eae5a24707e6190880123735e}
+A public function. This function finds the maximum in the set of inputs and returns it.
+
+FINDMax() \hypertarget{classHeap_a939367f091812b74651236c84b33cb4c}{
+\index{Heap@{Heap}!FindMin@{FindMin}}
+\index{FindMin@{FindMin}!Heap@{Heap}}
+\subsubsection[{FindMin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ type {\bf Heap}$<$ type $>$::FindMin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classHeap_a939367f091812b74651236c84b33cb4c}
+A public function. This function finds the minimum in the heap and return that minimum value or type.
+
+\hyperlink{classHeap_a939367f091812b74651236c84b33cb4c}{FindMin()} 
+
+Item at index 0 is the smallest 
+
+\hypertarget{classHeap_aee71c9c62bfe019dba075fb766fbe66f}{
+\index{Heap@{Heap}!Insert@{Insert}}
+\index{Insert@{Insert}!Heap@{Heap}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ void {\bf Heap}$<$ type $>$::Insert (
+\begin{DoxyParamCaption}
+\item[{type}]{ Item}
+\end{DoxyParamCaption}
+)}}
+\label{classHeap_aee71c9c62bfe019dba075fb766fbe66f}
+A public function. This function is used to insert element into a heap. 
+\begin{DoxyParams}{Parameters}
+\item[{\em Item}]a template type variable of the item to be inserted.\end{DoxyParams}
+INSERT() 
+
+At first, place item at the end of the heap:
+
+restore heap property 
+
+\hypertarget{classHeap_ac9070548295b929b26eaae4f9f33feeb}{
+\index{Heap@{Heap}!IsEmpty@{IsEmpty}}
+\index{IsEmpty@{IsEmpty}!Heap@{Heap}}
+\subsubsection[{IsEmpty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ bool {\bf Heap}$<$ type $>$::IsEmpty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classHeap_ac9070548295b929b26eaae4f9f33feeb}
+A public function. This function checks if the \hyperlink{classHeap}{Heap} is empty or not. Returns true if the heap is empty or else false. \hypertarget{classHeap_ab70ece2a97d7f2acae076eeab520bb4b}{
+\index{Heap@{Heap}!LeftChild@{LeftChild}}
+\index{LeftChild@{LeftChild}!Heap@{Heap}}
+\subsubsection[{LeftChild}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ int {\bf Heap}$<$ type $>$::LeftChild (
+\begin{DoxyParamCaption}
+\item[{int}]{ CurrentIndex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classHeap_ab70ece2a97d7f2acae076eeab520bb4b}
+A private function. This function returns the index of the left child of current index. 
+\begin{DoxyParams}{Parameters}
+\item[{\em CurrentIndex}]an integer type denoting the index of the current data. \end{DoxyParams}
+\hypertarget{classHeap_a1da405a605c455cd721ac76906357e38}{
+\index{Heap@{Heap}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Heap@{Heap}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ type {\bf Heap}$<$ type $>$::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{ index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classHeap_a1da405a605c455cd721ac76906357e38}
+A public function. This function overloads the operator \mbox{[}\mbox{]} so that the heap can be addressed directly. 
+\begin{DoxyParams}{Parameters}
+\item[{\em index}]an integer type which is to be retrieved. \end{DoxyParams}
+\hypertarget{classHeap_a2a963d8d9b9e8d8cc2ba9300e8a3ddbc}{
+\index{Heap@{Heap}!Parent@{Parent}}
+\index{Parent@{Parent}!Heap@{Heap}}
+\subsubsection[{Parent}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ int {\bf Heap}$<$ type $>$::Parent (
+\begin{DoxyParamCaption}
+\item[{int}]{ CurrentIndex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classHeap_a2a963d8d9b9e8d8cc2ba9300e8a3ddbc}
+A private function. This function returns the index of the parent of the index provided. 
+\begin{DoxyParams}{Parameters}
+\item[{\em CurrentIndex}]an integer type denoting the index of the current data. \end{DoxyParams}
+\hypertarget{classHeap_aae20fa71a0bd66d3c38530903d98d0c9}{
+\index{Heap@{Heap}!Remove@{Remove}}
+\index{Remove@{Remove}!Heap@{Heap}}
+\subsubsection[{Remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ void {\bf Heap}$<$ type $>$::Remove (
+\begin{DoxyParamCaption}
+\item[{type}]{ item}
+\end{DoxyParamCaption}
+)}}
+\label{classHeap_aae20fa71a0bd66d3c38530903d98d0c9}
+A public function. This function removes the item from the heap as per specified by user. 
+\begin{DoxyParams}{Parameters}
+\item[{\em item}]a template type variable denoting the item to be deleted.\end{DoxyParams}
+\hyperlink{classHeap_aae20fa71a0bd66d3c38530903d98d0c9}{Remove()} \hypertarget{classHeap_a281ae8764bfc807afb0fe0989a1ac8d8}{
+\index{Heap@{Heap}!RightChild@{RightChild}}
+\index{RightChild@{RightChild}!Heap@{Heap}}
+\subsubsection[{RightChild}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ int {\bf Heap}$<$ type $>$::RightChild (
+\begin{DoxyParamCaption}
+\item[{int}]{ CurrentIndex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}
+\label{classHeap_a281ae8764bfc807afb0fe0989a1ac8d8}
+A private function. This function returns the index of the right child of current index. 
+\begin{DoxyParams}{Parameters}
+\item[{\em CurrentIndex}]an integer type denoting the index of the current data. \end{DoxyParams}
+\hypertarget{classHeap_ad7de4787b16904d60a0ee9093a13f44c}{
+\index{Heap@{Heap}!SORT@{SORT}}
+\index{SORT@{SORT}!Heap@{Heap}}
+\subsubsection[{SORT}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ void {\bf Heap}$<$ type $>$::SORT (
+\begin{DoxyParamCaption}
+\item[{type}]{ IntArray\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{ MAX}
+\end{DoxyParamCaption}
+)}}
+\label{classHeap_ad7de4787b16904d60a0ee9093a13f44c}
+A Public function. This function sorts the heap and keeps in the array of template type. 
+\begin{DoxyParams}{Parameters}
+\item[{\em IntArray}]a template type array which stores the sorted value. \item[{\em MAX,an}]integer type which stores the maximum size of the array.\end{DoxyParams}
+\hyperlink{classHeap_ad7de4787b16904d60a0ee9093a13f44c}{SORT()} 
+
+constructor makes IntArray a heap
+
+Remove smallest item and place at index k
+
+At this point IntArray\mbox{[}0\mbox{]} contains the largest item by default 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classHeap_ac72ccab357597f7af528ff8fd2a1e407}{
+\index{Heap@{Heap}!HeapArrayPtr@{HeapArrayPtr}}
+\index{HeapArrayPtr@{HeapArrayPtr}!Heap@{Heap}}
+\subsubsection[{HeapArrayPtr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ type$\ast$ {\bf Heap}$<$ type $>$::{\bf HeapArrayPtr}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classHeap_ac72ccab357597f7af528ff8fd2a1e407}
+A private pointer of template type. This is the pointer to the heap array which stores the heap data. \hypertarget{classHeap_a42943c5d99db91b35800324be31941f5}{
+\index{Heap@{Heap}!HeapSize@{HeapSize}}
+\index{HeapSize@{HeapSize}!Heap@{Heap}}
+\subsubsection[{HeapSize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ int {\bf Heap}$<$ type $>$::{\bf HeapSize}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classHeap_a42943c5d99db91b35800324be31941f5}
+A private integer. This integer holds the present heap size. \hypertarget{classHeap_a9690145e2e3d0de97a8c4c79b704ec97}{
+\index{Heap@{Heap}!MaxHeapSize@{MaxHeapSize}}
+\index{MaxHeapSize@{MaxHeapSize}!Heap@{Heap}}
+\subsubsection[{MaxHeapSize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename type $>$ int {\bf Heap}$<$ type $>$::{\bf MaxHeapSize}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classHeap_a9690145e2e3d0de97a8c4c79b704ec97}
+A private integer. This integer holds the maximum datas that can be stored in the heap. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{heap_8h}{heap.h}\end{DoxyCompactItemize}

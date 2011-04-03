@@ -1,0 +1,120 @@
+\hypertarget{classOpenCVWidget}{
+\section{OpenCVWidget Class Reference}
+\label{classOpenCVWidget}\index{OpenCVWidget@{OpenCVWidget}}
+}
+
+
+{\ttfamily \#include $<$openCVWidget.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOpenCVWidget_abae2420f4043f52fa370f48a2d067613}{OpenCVWidget} (QWidget $\ast$parent=0)
+\item 
+\hyperlink{classOpenCVWidget_ab9c699a779b06c50f03baf2f9044d40a}{$\sim$OpenCVWidget} (void)
+\item 
+void \hyperlink{classOpenCVWidget_a606f158ae31d544aeaebf62eaa4c5578}{putImage} (IplImage $\ast$cvimage)
+\item 
+IplImage $\ast$ \hyperlink{classOpenCVWidget_aa810d1ba38622b3ede548c5c05c09d4b}{QImage2IplImage} (QImage $\ast$qimg)
+\item 
+QImage $\ast$ \hyperlink{classOpenCVWidget_af99b8e4ebea0ee0253de42b6b0b0c564}{IplImage2QImage} (IplImage $\ast$iplImg)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QLabel $\ast$ \hyperlink{classOpenCVWidget_afee1a5f25e6e5072aad2cffdc155a3a0}{imagelabel}
+\item 
+QVBoxLayout $\ast$ \hyperlink{classOpenCVWidget_afc95cfbd7dc35fe7d1ddb7aeceb0d6ae}{layout}
+\item 
+QImage \hyperlink{classOpenCVWidget_a943bdf3d872bc531e759f210f301f1f9}{image}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+OpenCV Widget class. This class is used to combine openCV and Qt. The IplImage format of OpenCV is passed onto this class and it converts it into a QImage and tags it to a QLabel so that it can be integrated in the Qt Gui to be shown to the user. It is inherited publicly from the QWidget class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOpenCVWidget_abae2420f4043f52fa370f48a2d067613}{
+\index{OpenCVWidget@{OpenCVWidget}!OpenCVWidget@{OpenCVWidget}}
+\index{OpenCVWidget@{OpenCVWidget}!OpenCVWidget@{OpenCVWidget}}
+\subsubsection[{OpenCVWidget}]{\setlength{\rightskip}{0pt plus 5cm}OpenCVWidget::OpenCVWidget (
+\begin{DoxyParamCaption}
+\item[{QWidget $\ast$}]{ parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classOpenCVWidget_abae2420f4043f52fa370f48a2d067613}
+Constructor of OpenCV Widget class. This constructor initialzes all the pointer variables of the class and sets the layout. 
+\begin{DoxyParams}{Parameters}
+\item[{\em parent}]a pointer to QWidget assigning the parent of this widget.\end{DoxyParams}
+Constructor \hypertarget{classOpenCVWidget_ab9c699a779b06c50f03baf2f9044d40a}{
+\index{OpenCVWidget@{OpenCVWidget}!$\sim$OpenCVWidget@{$\sim$OpenCVWidget}}
+\index{$\sim$OpenCVWidget@{$\sim$OpenCVWidget}!OpenCVWidget@{OpenCVWidget}}
+\subsubsection[{$\sim$OpenCVWidget}]{\setlength{\rightskip}{0pt plus 5cm}OpenCVWidget::$\sim$OpenCVWidget (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{classOpenCVWidget_ab9c699a779b06c50f03baf2f9044d40a}
+Destructor.
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classOpenCVWidget_af99b8e4ebea0ee0253de42b6b0b0c564}{
+\index{OpenCVWidget@{OpenCVWidget}!IplImage2QImage@{IplImage2QImage}}
+\index{IplImage2QImage@{IplImage2QImage}!OpenCVWidget@{OpenCVWidget}}
+\subsubsection[{IplImage2QImage}]{\setlength{\rightskip}{0pt plus 5cm}QImage $\ast$ OpenCVWidget::IplImage2QImage (
+\begin{DoxyParamCaption}
+\item[{IplImage $\ast$}]{ iplImg}
+\end{DoxyParamCaption}
+)}}
+\label{classOpenCVWidget_af99b8e4ebea0ee0253de42b6b0b0c564}
+A public function. This function is reponsible for converting the IplImage to QImage and it mainly takes care of the different IplImage formats and channels.
+
+Converting IplImage to QImage \hypertarget{classOpenCVWidget_a606f158ae31d544aeaebf62eaa4c5578}{
+\index{OpenCVWidget@{OpenCVWidget}!putImage@{putImage}}
+\index{putImage@{putImage}!OpenCVWidget@{OpenCVWidget}}
+\subsubsection[{putImage}]{\setlength{\rightskip}{0pt plus 5cm}void OpenCVWidget::putImage (
+\begin{DoxyParamCaption}
+\item[{IplImage $\ast$}]{ cvimage}
+\end{DoxyParamCaption}
+)}}
+\label{classOpenCVWidget_a606f158ae31d544aeaebf62eaa4c5578}
+A public function. This function is called when IplImage has to be converted into QImage for Qt openCV integration. This function reads pixel by pixel values from the IplImage and assigns it to the QImage. 
+\begin{DoxyParams}{Parameters}
+\item[{\em cvimage}]a pointer to IplImage which stores the image. currently being used.\end{DoxyParams}
+Putting image to the QLabel \hypertarget{classOpenCVWidget_aa810d1ba38622b3ede548c5c05c09d4b}{
+\index{OpenCVWidget@{OpenCVWidget}!QImage2IplImage@{QImage2IplImage}}
+\index{QImage2IplImage@{QImage2IplImage}!OpenCVWidget@{OpenCVWidget}}
+\subsubsection[{QImage2IplImage}]{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ OpenCVWidget::QImage2IplImage (
+\begin{DoxyParamCaption}
+\item[{QImage $\ast$}]{ qimg}
+\end{DoxyParamCaption}
+)}}
+\label{classOpenCVWidget_aa810d1ba38622b3ede548c5c05c09d4b}
+A public function. This function is used to convert QImage to IplImage. Since this widget is used for integration of Qt with openCV. This functionality is included to include both directional compatibility.
+
+Converting QImage to IplImage 
+
+\subsection{Member Data Documentation}
+\hypertarget{classOpenCVWidget_a943bdf3d872bc531e759f210f301f1f9}{
+\index{OpenCVWidget@{OpenCVWidget}!image@{image}}
+\index{image@{image}!OpenCVWidget@{OpenCVWidget}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}QImage {\bf OpenCVWidget::image}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classOpenCVWidget_a943bdf3d872bc531e759f210f301f1f9}
+Object of QImage. This object is the one in which the IplImage is converted to and this image is then assigned to the label. \hypertarget{classOpenCVWidget_afee1a5f25e6e5072aad2cffdc155a3a0}{
+\index{OpenCVWidget@{OpenCVWidget}!imagelabel@{imagelabel}}
+\index{imagelabel@{imagelabel}!OpenCVWidget@{OpenCVWidget}}
+\subsubsection[{imagelabel}]{\setlength{\rightskip}{0pt plus 5cm}QLabel$\ast$ {\bf OpenCVWidget::imagelabel}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classOpenCVWidget_afee1a5f25e6e5072aad2cffdc155a3a0}
+Pointer to QLabel. This QLabel pointer is the label on which the converted image is mapped to. The converted QImage is assigned to this label in the form of QPixmap. \hypertarget{classOpenCVWidget_afc95cfbd7dc35fe7d1ddb7aeceb0d6ae}{
+\index{OpenCVWidget@{OpenCVWidget}!layout@{layout}}
+\index{layout@{layout}!OpenCVWidget@{OpenCVWidget}}
+\subsubsection[{layout}]{\setlength{\rightskip}{0pt plus 5cm}QVBoxLayout$\ast$ {\bf OpenCVWidget::layout}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classOpenCVWidget_afc95cfbd7dc35fe7d1ddb7aeceb0d6ae}
+Pointer to QVBoxLayout. This is used to set the label in proper layout. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{openCVWidget_8h}{openCVWidget.h}\item 
+\hyperlink{openCVWidget_8cpp}{openCVWidget.cpp}\end{DoxyCompactItemize}

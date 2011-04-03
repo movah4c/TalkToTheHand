@@ -1,0 +1,173 @@
+\hypertarget{classCameraWidget}{
+\section{CameraWidget Class Reference}
+\label{classCameraWidget}\index{CameraWidget@{CameraWidget}}
+}
+
+
+{\ttfamily \#include $<$cameraWidget.h$>$}
+
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCameraWidget_a7d08d12d114c7bd9e4b92ae605742188}{viewTypeChange} (int type)
+\item 
+void \hyperlink{classCameraWidget_afd21e680e172d0ed95d328a5addea3b0}{operationalModeChange} (int mode, QString filename)
+\item 
+void \hyperlink{classCameraWidget_a2d5829477a10b5a0f41fd37917e69fe6}{changeRunningState} (int state)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCameraWidget_aa843e6a42438150fa9e4e60b8fc7e4f4}{CameraWidget} (CvCapture $\ast$cam, QWidget $\ast$parent=0)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classCameraWidget_a76aca1e4016b0365c643993322b93b47}{runningState}
+\item 
+\hyperlink{classMatchGesture}{MatchGesture} $\ast$ \hyperlink{classCameraWidget_a7107e471a359c2577f9dfac50969d635}{matchGesture}
+\item 
+\hyperlink{classBackgroundSubtraction}{BackgroundSubtraction} $\ast$ \hyperlink{classCameraWidget_a395a84c275e7b80005f0fa8193b136b2}{subtractBackground}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCameraWidget_a1714b8ae14b664e00b7b4cf873258bfc}{timerEvent} (QTimerEvent $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOpenCVWidget}{OpenCVWidget} $\ast$ \hyperlink{classCameraWidget_a26a75c26ed103223c9e127f402108b09}{cvwidget}
+\item 
+CvCapture $\ast$ \hyperlink{classCameraWidget_a3ec280c32b8923e76d49e6dc3ab845cf}{camera}
+\item 
+int \hyperlink{classCameraWidget_a1e443b2b7aeeefe58b4c238930d0dd90}{viewType}
+\item 
+int \hyperlink{classCameraWidget_a9816f938d5bf155f91bbaa86f66fd1dd}{operationalMode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Camera Widget class. This class is the main component of the main window and is responsible for presenting every output to the user based on the input he has provided. This class integrates all modules such as background subtraction, hand detection matching and opencv widget. It updates the view on the main window every few seconds. All system states are handled by this class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCameraWidget_aa843e6a42438150fa9e4e60b8fc7e4f4}{
+\index{CameraWidget@{CameraWidget}!CameraWidget@{CameraWidget}}
+\index{CameraWidget@{CameraWidget}!CameraWidget@{CameraWidget}}
+\subsubsection[{CameraWidget}]{\setlength{\rightskip}{0pt plus 5cm}CameraWidget::CameraWidget (
+\begin{DoxyParamCaption}
+\item[{CvCapture $\ast$}]{ cam, }
+\item[{QWidget $\ast$}]{ parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classCameraWidget_aa843e6a42438150fa9e4e60b8fc7e4f4}
+Class constructor. This constructor initializes the camera variable for capturing. All the connections to the matching module, background subtraction module and hand detection module are also made in this. The layout is initialzed and a fixed sized frame is made for the images to be displayed. 
+\begin{DoxyParams}{Parameters}
+\item[{\em cam}]a CvCapture pointer to receive initialized openCV camera. \item[{\em parent}]a pointer to the main window denoting it as parent.\end{DoxyParams}
+Constructor 
+
+Initializing values to be used by this class
+
+Add the widget to the layout which is then added to the window.
+
+Resize the output to a particular size
+
+Initialize the timer for 0.1 seconds update
+
+Set operational mode of the application 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCameraWidget_a2d5829477a10b5a0f41fd37917e69fe6}{
+\index{CameraWidget@{CameraWidget}!changeRunningState@{changeRunningState}}
+\index{changeRunningState@{changeRunningState}!CameraWidget@{CameraWidget}}
+\subsubsection[{changeRunningState}]{\setlength{\rightskip}{0pt plus 5cm}void CameraWidget::changeRunningState (
+\begin{DoxyParamCaption}
+\item[{int}]{ state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{classCameraWidget_a2d5829477a10b5a0f41fd37917e69fe6}
+A public Qt Slot which recieves running state of the system. 
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]an integer denoting whether system is in play/stop mode.\end{DoxyParams}
+Slot to change running state of the system \hypertarget{classCameraWidget_afd21e680e172d0ed95d328a5addea3b0}{
+\index{CameraWidget@{CameraWidget}!operationalModeChange@{operationalModeChange}}
+\index{operationalModeChange@{operationalModeChange}!CameraWidget@{CameraWidget}}
+\subsubsection[{operationalModeChange}]{\setlength{\rightskip}{0pt plus 5cm}void CameraWidget::operationalModeChange (
+\begin{DoxyParamCaption}
+\item[{int}]{ mode, }
+\item[{QString}]{ filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{classCameraWidget_afd21e680e172d0ed95d328a5addea3b0}
+A public Qt Slot which recieves operational mode. 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]an integer denoting the input mode of user. \item[{\em filename}]a QString type denoting the input filename.\end{DoxyParams}
+Change operational mode of the application \hypertarget{classCameraWidget_a1714b8ae14b664e00b7b4cf873258bfc}{
+\index{CameraWidget@{CameraWidget}!timerEvent@{timerEvent}}
+\index{timerEvent@{timerEvent}!CameraWidget@{CameraWidget}}
+\subsubsection[{timerEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CameraWidget::timerEvent (
+\begin{DoxyParamCaption}
+\item[{QTimerEvent $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCameraWidget_a1714b8ae14b664e00b7b4cf873258bfc}
+A Private callback function. This is a timer callback function which is called every 0.1 seconds to update the view received from the camera. It is this function which also receives the updated output from other modules also.
+
+Update the widget every 0.1 second according to the timer \hypertarget{classCameraWidget_a7d08d12d114c7bd9e4b92ae605742188}{
+\index{CameraWidget@{CameraWidget}!viewTypeChange@{viewTypeChange}}
+\index{viewTypeChange@{viewTypeChange}!CameraWidget@{CameraWidget}}
+\subsubsection[{viewTypeChange}]{\setlength{\rightskip}{0pt plus 5cm}void CameraWidget::viewTypeChange (
+\begin{DoxyParamCaption}
+\item[{int}]{ type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{classCameraWidget_a7d08d12d114c7bd9e4b92ae605742188}
+A public Qt slot which recieves integer parameter. This slot slot captures the signal emitted from the main window when user requests for a change in view type. 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]an integer to receive changed view type.\end{DoxyParams}
+Changin view type of the application 
+
+\subsection{Member Data Documentation}
+\hypertarget{classCameraWidget_a3ec280c32b8923e76d49e6dc3ab845cf}{
+\index{CameraWidget@{CameraWidget}!camera@{camera}}
+\index{camera@{camera}!CameraWidget@{CameraWidget}}
+\subsubsection[{camera}]{\setlength{\rightskip}{0pt plus 5cm}CvCapture$\ast$ {\bf CameraWidget::camera}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classCameraWidget_a3ec280c32b8923e76d49e6dc3ab845cf}
+A private CvCapture pointer. This capture mode receives the pointer from the mainwindow and is used to capture further frames from the webcam for processing. \hypertarget{classCameraWidget_a26a75c26ed103223c9e127f402108b09}{
+\index{CameraWidget@{CameraWidget}!cvwidget@{cvwidget}}
+\index{cvwidget@{cvwidget}!CameraWidget@{CameraWidget}}
+\subsubsection[{cvwidget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OpenCVWidget}$\ast$ {\bf CameraWidget::cvwidget}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classCameraWidget_a26a75c26ed103223c9e127f402108b09}
+A private QOpenCVWidget pointer. This is the widget pointer which is passed the opencv frames and it displays it into the Qt format in a label attached to it. \hypertarget{classCameraWidget_a7107e471a359c2577f9dfac50969d635}{
+\index{CameraWidget@{CameraWidget}!matchGesture@{matchGesture}}
+\index{matchGesture@{matchGesture}!CameraWidget@{CameraWidget}}
+\subsubsection[{matchGesture}]{\setlength{\rightskip}{0pt plus 5cm}{\bf MatchGesture}$\ast$ {\bf CameraWidget::matchGesture}}}
+\label{classCameraWidget_a7107e471a359c2577f9dfac50969d635}
+A pointer to instance of \hyperlink{classMatchGesture}{MatchGesture} class. This pointer is used to connect and receive input from the matching module. \hypertarget{classCameraWidget_a9816f938d5bf155f91bbaa86f66fd1dd}{
+\index{CameraWidget@{CameraWidget}!operationalMode@{operationalMode}}
+\index{operationalMode@{operationalMode}!CameraWidget@{CameraWidget}}
+\subsubsection[{operationalMode}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CameraWidget::operationalMode}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classCameraWidget_a9816f938d5bf155f91bbaa86f66fd1dd}
+A private integer variable. This stores the operational mode of the system. \hypertarget{classCameraWidget_a76aca1e4016b0365c643993322b93b47}{
+\index{CameraWidget@{CameraWidget}!runningState@{runningState}}
+\index{runningState@{runningState}!CameraWidget@{CameraWidget}}
+\subsubsection[{runningState}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CameraWidget::runningState}}}
+\label{classCameraWidget_a76aca1e4016b0365c643993322b93b47}
+A public integer variable. This stores the play/pause mode of the system. \hypertarget{classCameraWidget_a395a84c275e7b80005f0fa8193b136b2}{
+\index{CameraWidget@{CameraWidget}!subtractBackground@{subtractBackground}}
+\index{subtractBackground@{subtractBackground}!CameraWidget@{CameraWidget}}
+\subsubsection[{subtractBackground}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BackgroundSubtraction}$\ast$ {\bf CameraWidget::subtractBackground}}}
+\label{classCameraWidget_a395a84c275e7b80005f0fa8193b136b2}
+A pointer to instance of \hyperlink{classBackgroundSubtraction}{BackgroundSubtraction} class. This pointer is used to recieve output from the background subtraction module. \hypertarget{classCameraWidget_a1e443b2b7aeeefe58b4c238930d0dd90}{
+\index{CameraWidget@{CameraWidget}!viewType@{viewType}}
+\index{viewType@{viewType}!CameraWidget@{CameraWidget}}
+\subsubsection[{viewType}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CameraWidget::viewType}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classCameraWidget_a1e443b2b7aeeefe58b4c238930d0dd90}
+A private integer variable. This stores the system view state for this class. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{cameraWidget_8h}{cameraWidget.h}\item 
+\hyperlink{cameraWidget_8cpp}{cameraWidget.cpp}\end{DoxyCompactItemize}
