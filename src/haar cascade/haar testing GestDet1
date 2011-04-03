@@ -1,0 +1,123 @@
+HAAR CASCADES TESTING - GestDet1.cpp
+
+
+WHITE BOX TESTING
+
+1. There is no need of nested-cascade in the present case as we are not going to use it in our application
+        
+2. void detectAndDraw( Mat& img,
+ CascadeClassifier& cascade, CascadeClassifier& nestedCascade,
+ double scale);
+
+include another argument (char alphabet) that is used to detect which alphabet is detected. As of now, it is saying “A detected for every alphabet”. We can return using this to identify the exact alphabet that is recognised.
+
+3.  const String scaleOpt = "--scale=";
+    size_t scaleOptLen = scaleOpt.length();
+    const String cascadeOpt = "--cascade=";
+    size_t cascadeOptLen = cascadeOpt.length();
+    const String nestedCascadeOpt = "--nested-cascade";
+    size_t nestedCascadeOptLen = nestedCascadeOpt.length();
+
+These variables are never used in the program
+
+4. Proper modularization and commenting is to be done.
+
+5.CascadeClassifier cascade, nestedCascade;
+ Here the variable nestedCascade is not needed
+
+6.nestedCascadeName.assign("");
+  unnecessay code
+
+7.capture = cvCaptureFromCAM(0);
+ This won't work on windows. For windows we need to use capture = cvCaptureFromCAM(0);
+
+8.if( waitKey( 10 ) >= 0 )
+                goto _cleanup_;
+  Instead we can use break statement.
+
+9.waitKey(0);
+  unnecessary code
+
+10.void detectAndDraw( Mat& img,CascadeClassifier& cascade, CascadeClassifier& nestedCascade,double scale)
+  Here the parameter nestedCascade is not required to be passed.
+
+11.t = (double)cvGetTickCount();
+   t = (double)cvGetTickCount() - t;
+   printf( "detection time = %g ms\n", t/((double)cvGetTickFrequency()*1000.) );
+
+  unnecessary code
+
+12.if(center.x != 0 || center.y != 0)
+		cout<<"A Detected"<<endl;
+        circle( img, center, radius, color, 3, 8, 0 );
+   
+   We need not draw the circle if there is no detection. So, we can improve the code in the following manner.
+
+   if(center.x != 0 || center.y != 0)
+	{
+	cout<<"A Detected"<<endl;
+        circle( img, center, radius, color, 3, 8, 0 );
+	}
+   
+13.if( nestedCascade.empty() )
+            continue;
+        smallImgROI = smallImg(*r);
+        nestedCascade.detectMultiScale( smallImgROI, nestedObjects,
+            1.1, 2, 0
+            //|CV_HAAR_FIND_BIGGEST_OBJECT
+            //|CV_HAAR_DO_ROUGH_SEARCH
+            //|CV_HAAR_DO_CANNY_PRUNING
+            |CV_HAAR_SCALE_IMAGE
+            ,
+            Size(30, 30) );
+        for( vector<Rect>::const_iterator nr = nestedObjects.begin(); nr != nestedObjects.end(); nr++ )
+        {
+            center.x = cvRound((r->x + nr->x + nr->width*0.5)*scale);
+            center.y = cvRound((r->y + nr->y + nr->height*0.5)*scale);
+            radius = cvRound((nr->width + nr->height)*0.25*scale);
+            circle( img, center, radius, color, 3, 8, 0 );
+        }
+
+   this is unnecessay code in the detectAndDraw module.
+
+14. In the beginning of the code the following initialization is not needed as assignment is done before use in further code
+    String cascadeName ="/home/superuser/nihal/customise/aGest.xml";
+
+15. else
+    {
+        if( !image.empty() )
+        {
+            detectAndDraw( image, cascade, nestedCascade, scale );
+            waitKey(0);
+        }
+        else if( !inputName.empty() )
+        {
+            /* assume it is a text file containing the
+            list of the image filenames to be processed - one per line */
+            FILE* f = fopen( inputName.c_str(), "rt" );
+            if( f )
+            {
+                char buf[1000+1];
+                while( fgets( buf, 1000, f ) )
+                {
+                    int len = (int)strlen(buf), c;
+                    while( len > 0 && isspace(buf[len-1]) )
+                        len--;
+                    buf[len] = '\0';
+                    cout << "file " << buf << endl;
+                    image = imread( buf, 1 );
+                    if( !image.empty() )
+                    {
+                        detectAndDraw( image, cascade, nestedCascade, scale );
+                        c = waitKey(0);
+                        if( c == 27 || c == 'q' || c == 'Q' )
+                            break;
+                    }
+                }
+                fclose(f);
+            }
+        }
+    }
+
+    The following code is not a functional requirement.
+    

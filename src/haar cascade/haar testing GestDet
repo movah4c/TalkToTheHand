@@ -1,0 +1,80 @@
+HAAR CASCADES TESTING  - GestDet.cpp
+
+WHITE BOX TESTING - code review
+
+1. There is no need of nested-cascade in the present case as we are not going to use it in our application
+2. Unnecessary code snippet
+	
+   else if( nestedCascadeOpt.compare( 0, nestedCascadeOptLen,argv[i], nestedCascadeOptLen ) == 0 )
+        {
+            if( argv[i][nestedCascadeOpt.length()] == '=' )
+                nestedCascadeName.assign( argv[i] + nestedCascadeOpt.length() + 1 );
+            if( !nestedCascade.load( nestedCascadeName ) )
+                cerr << "WARNING: Could not load classifier cascade for nested objects" << endl;
+        }
+3. modify the 
+if( !cascade.load( cascadeName ) ) code snippet
+to suit the changes made above.
+
+4. else if( inputName.size() )
+       {
+        image = imread( inputName, 1 );
+        if( image.empty() )
+            capture = cvCaptureFromAVI( inputName.c_str() );
+       }
+	In this module reading from a single image is not a functional requirement. So, we can eliminate the code.
+5. else
+        image = imread( "lena.jpg", 1 );
+This too as mentioned above is not a functional requirement and the image name is hard-coded.
+6. if( waitKey( 10 ) >= 0 )
+                goto _cleanup_;
+	instead of using goto, we can use break. It is a good programming practice.
+
+7.for( int i = 1; i < argc; i++ )
+    {
+        if( cascadeOpt.compare( 0, cascadeOptLen, argv[i], cascadeOptLen ) == 0 )
+            cascadeName.assign( argv[i] + cascadeOptLen );
+        else if( nestedCascadeOpt.compare( 0, nestedCascadeOptLen, argv[i], nestedCascadeOptLen ) == 0 )
+        {
+            if( argv[i][nestedCascadeOpt.length()] == '=' )
+                nestedCascadeName.assign( argv[i] + nestedCascadeOpt.length() + 1 );
+            if( !nestedCascade.load( nestedCascadeName ) )
+                cerr << "WARNING: Could not load classifier cascade for nested objects" << endl;
+        }
+        else if( scaleOpt.compare( 0, scaleOptLen, argv[i], scaleOptLen ) == 0 )
+        {
+            if( !sscanf( argv[i] + scaleOpt.length(), "%lf", &scale ) || scale < 1 )
+                scale = 1;
+        }
+        else if( argv[i][0] == '-' )
+        {
+            cerr << "WARNING: Unknown option %s" << argv[i] << endl;
+        }
+        else
+            inputName.assign( argv[i] );
+    }
+
+  This code is not necessary as we won't be needing any command line arguments.
+
+
+8.if( nestedCascade.empty() )
+            continue;
+        smallImgROI = smallImg(*r);
+        nestedCascade.detectMultiScale( smallImgROI, nestedObjects,
+            1.1, 2, 0
+            //|CV_HAAR_FIND_BIGGEST_OBJECT
+            //|CV_HAAR_DO_ROUGH_SEARCH
+            //|CV_HAAR_DO_CANNY_PRUNING
+            |CV_HAAR_SCALE_IMAGE
+            ,
+            Size(30, 30) );
+        for( vector<Rect>::const_iterator nr = nestedObjects.begin(); nr != nestedObjects.end(); nr++ )
+        {
+            center.x = cvRound((r->x + nr->x + nr->width*0.5)*scale);
+            center.y = cvRound((r->y + nr->y + nr->height*0.5)*scale);
+            radius = cvRound((nr->width + nr->height)*0.25*scale);
+            circle( img, center, radius, color, 3, 8, 0 );
+        }
+   This code is unnecessary and can be eliminated.
+
+9. The function drawAndDetect() doesn't need nestedCascade as a argument as it not being used anywhere.
