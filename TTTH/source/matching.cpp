@@ -45,7 +45,26 @@ IplImage* MatchGesture::getMatch(IplImage *iplImage)
     else
         flip( frame, frameCopy, 0 );
 
-    detectAndDraw( frameCopy, cascade, nestedCascade, scale );
+    for(int i=0; i<2 ;i++)
+   {
+
+		if(i == 0)
+		{
+			cascadeName.assign("../resource/trainedXML/aGest.xml");
+    			scale =3;
+			//cascade.load( cascadeName );		
+			//detectAndDraw( frameCopy, cascade, nestedCascade, scale );
+		}
+		else if(i == 1)
+		{
+			cascadeName.assign("../resource/trainedXML/bGest.xml");
+    			scale =4;
+			
+		}
+		
+		cascade.load( cascadeName );
+		detectAndDraw( frameCopy, cascade, nestedCascade, scale );
+	}
 
     IplImage tempImage = frameCopy; //Illegal assignment of pointer to object
     iplImage = frameCopy;
