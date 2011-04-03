@@ -47,7 +47,7 @@ IplImage* MatchGesture::getMatch(IplImage *iplImage)
 
     detectAndDraw( frameCopy, cascade, nestedCascade, scale );
 
-    IplImage tempImage = frameCopy;
+    IplImage tempImage = frameCopy; //Illegal assignment of pointer to object
     iplImage = frameCopy;
 
 
